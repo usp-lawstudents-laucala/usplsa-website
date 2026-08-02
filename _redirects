@@ -1,0 +1,5 @@
+# Redirect the old Netlify homepage and all paths to the new primary domain
+https://usp-lawstudents-association.netlify.app/ https://usplsa.com/ 301!
+http://usp-lawstudents-association.netlify.app/ https://usplsa.com/ 301!
+https://usp-lawstudents-association.netlify.app/* https://usplsa.com/:splat 301!
+http://usp-lawstudents-association.netlify.app/* https://usplsa.com/:splat 301!
