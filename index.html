@@ -927,18 +927,25 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 2rem;
-            align-items: center;
+            align-items: start;
+        }
+
+        .sponsors-content {
+            display: grid;
+            gap: 1.25rem;
+        }
+
+        .sponsors-intro {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            min-height: 100%;
+            padding-right: 0.5rem;
         }
 
         .sponsors-section p {
             margin: 0 0 1.25rem;
             line-height: 1.65;
-        }
-
-        .sponsor-placeholders {
-            display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 0.8rem;
         }
 
         .sponsor-placeholder {
@@ -968,32 +975,34 @@
         }
 
         .sponsor-card {
-            grid-column: 1 / -1;
             display: grid;
-            grid-template-columns: minmax(130px, 0.7fr) minmax(0, 2fr);
-            gap: 1.25rem;
-            align-items: center;
-            padding: 1.25rem;
-            border-radius: 10px;
+            grid-template-columns: minmax(170px, 0.75fr) minmax(0, 2.1fr);
+            gap: 1.5rem;
+            align-items: start;
+            padding: 1.5rem 1.75rem;
+            border-radius: 14px;
             background: #fff;
             color: var(--dark);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
         }
 
         .sponsor-card img {
             width: 100%;
-            max-height: 130px;
+            max-height: 180px;
             object-fit: contain;
+            padding: 0.5rem;
         }
 
         .sponsor-card h3 {
-            margin: 0 0 0.45rem;
+            margin: 0 0 0.55rem;
             color: var(--primary);
         }
 
         .sponsor-card p {
             margin: 0;
             color: var(--dark);
-            font-size: 0.9rem;
+            font-size: 0.95rem;
+            line-height: 1.8;
         }
 
         @media (max-width: 900px) {
@@ -1780,30 +1789,50 @@
         </div>
     </section>
 
-    <!-- Inter-Tertiary Moot Competition Sponsors -->
+    <!-- Inter-Tertiary Moot Competition Sponsor -->
     <section aria-labelledby="sponsors-heading">
         <div class="sponsors-section">
-            <div class="sponsors-layout">
-                <div>
+            <div class="sponsors-content">
+                <div class="sponsors-intro" aria-label="Inter-Tertiary Moot Competition sponsorship intro">
                     <span class="sponsors-kicker">Inter-Tertiary Moot Competition 2026</span>
-                    <h2 id="sponsors-heading">Competition Sponsors</h2>
-                    <p>Help make the 2026 Inter-Tertiary Moot Competition a meaningful opportunity for law students across Fiji. Your organisation's support will be recognised here alongside the sponsors helping develop the next generation of legal professionals.</p>
-                    <a class="btn" href="mailto:usplsaexecutives@gmail.com?subject=Inter-Tertiary%20Moot%20Competition%202026%20Sponsorship%20Enquiry">Sponsor the competition</a>
+                    <h2 id="sponsors-heading">Official Sponsor</h2>
+                    <p>We proudly acknowledge the Competition and Consumer Commission (FCCC) as the major sponsor of the 2026 Inter-Tertiary Moot Competition.</p>
                 </div>
-                <div class="sponsor-placeholders" aria-label="Inter-Tertiary Moot Competition sponsor logos and banners">
-                    <article class="sponsor-card">
-                        <img src="sponsor1.jpg" alt="Competition and Consumer Commission logo">
-                        <div>
-                            <h3>Competition and Consumer Commission (FCCC)</h3>
-                            <p>The Competition and Consumer Commission (FCCC) is Fiji's independent regulator responsible for promoting fair competition, protecting consumer rights, and fostering efficient, transparent markets. FCCC enforces competition and consumer protection laws, investigates anti-competitive conduct, monitors market practices, regulates prices in designated sectors, and advocates for fair trading across the country. Through its regulatory and enforcement functions, FCCC helps ensure that consumers are treated fairly while encouraging businesses to compete on a level playing field, contributing to a stronger and more resilient Fijian economy. We encourage our students and members of the public to learn more about FCCC's work and to reach out to the Commission for information, guidance, or assistance on competition and consumer protection matters.</p>
-                        </div>
-                    </article>
-                    <div class="sponsor-placeholder">Your brand here<small>Support the Inter-Tertiary Moot Competition</small></div>
-                </div>
+                <article class="sponsor-card" aria-label="Competition and Consumer Commission sponsor information">
+                    <img src="sponsor1.jpg" alt="Competition and Consumer Commission logo">
+                    <div>
+                        <h3>Competition and Consumer Commission (FCCC)</h3>
+                        <p>The Competition and Consumer Commission (FCCC) is Fiji's independent regulator responsible for promoting fair competition, protecting consumer rights, and fostering efficient, transparent markets. FCCC enforces competition and consumer protection laws, investigates anti-competitive conduct, monitors market practices, regulates prices in designated sectors, and advocates for fair trading across the country. Through its regulatory and enforcement functions, FCCC helps ensure that consumers are treated fairly while encouraging businesses to compete on a level playing field, contributing to a stronger and more resilient Fijian economy. We encourage our students and members of the public to learn more about FCCC's work and to reach out to the Commission for information, guidance, or assistance on competition and consumer protection matters.</p>
+                    </div>
+                </article>
+                <article class="sponsor-card" aria-label="Matuku Visual Productions and TO1 Events sponsor information">
+                    <img src="matuku.jpg" alt="Matuku Visual Productions and TO1 Events logo">
+                    <div>
+                        <h3>Matuku Visual Productions / TO1 Events</h3>
+                        <p>Matuku Visual Productions and TO1 Events provided sound system services and livestream assistance during our first inter-tertiary match, helping bring the event to life for our audience and supporting a smooth and professional experience.</p>
+                    </div>
+                </article>
             </div>
         </div>
     </section>
 
+    <!-- General USPLSA Sponsorship -->
+    <section aria-labelledby="general-sponsors-heading">
+        <div class="sponsors-section">
+            <div class="sponsors-layout">
+                <div>
+                    <span class="sponsors-kicker">Partner with USPLSA</span>
+                    <h2 id="general-sponsors-heading">General Sponsorship Opportunities</h2>
+                    <p>Support USPLSA's academic, professional and community activities throughout the year. Your organisation and brand can be featured here while helping create meaningful opportunities for USP law students.</p>
+                    <a class="btn" href="mailto:usplsaexecutives@gmail.com?subject=USPLSA%20General%20Sponsorship%20Enquiry">Become a general sponsor</a>
+                </div>
+                <div class="sponsor-placeholders" aria-label="General USPLSA sponsor logos and banners">
+                    <div class="sponsor-placeholder">Your logo here<small>General sponsor logos and banners coming soon</small></div>
+                    <div class="sponsor-placeholder">Your brand here<small>Show your support for future legal professionals</small></div>
+                </div>
+            </div>
+        </div>
+    </section>
     <!-- Hague Debate Achievement -->
     <section>
         <h2>USP at The Hague</h2>
