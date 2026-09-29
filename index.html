@@ -271,6 +271,43 @@
             }
         }
 
+        .moot-champions-card {
+            display: grid;
+            grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+            overflow: hidden;
+            border-radius: 18px;
+            background: #fff;
+            border: 1px solid rgba(105,5,0,.14);
+            box-shadow: 0 12px 35px rgba(33,15,4,.08);
+        }
+        .moot-champions-photo {
+            display: flex;
+            align-items: center;
+            background: #f5f1ed;
+        }
+        .moot-champions-photo img {
+            display: block;
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+        }
+        .moot-champions-copy { padding: clamp(24px, 4vw, 44px); }
+        .moot-champions-kicker {
+            display: block;
+            margin-bottom: 12px;
+            color: #690500;
+            font-size: .8rem;
+            font-weight: 700;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+        }
+        .moot-champions-copy h2 { margin: 0 0 18px; text-align: left; }
+        .moot-champions-copy p { margin: 0 0 16px; line-height: 1.7; }
+        .moot-champions-copy p:last-child { margin-bottom: 0; }
+        @media (max-width: 768px) {
+            .moot-champions-card { grid-template-columns: minmax(0, 1fr); }
+        }
+
         /* HERO */
         .hero {
             background: linear-gradient(rgba(105,5,0,0.85), rgba(33,15,4,0.6)),
@@ -1772,6 +1809,22 @@
                 <p>Student-Led</p>
             </div>
         </div>
+    </section>
+
+    <!-- 2026 Internal Moot Champions -->
+    <section aria-labelledby="moot-champions-heading">
+        <article class="moot-champions-card">
+            <div class="moot-champions-photo">
+                <img src="2026mootchamps.jpg" alt="Team Legal Minds, the 2026 USPLSA Internal Moot Champions" loading="lazy">
+            </div>
+            <div class="moot-champions-copy">
+                <span class="moot-champions-kicker">Internal Moot Competition Finals | 2026</span>
+                <h2 id="moot-champions-heading">Congratulations, Team Legal Minds!</h2>
+                <p>Team Legal Minds emerged victorious over Team Legal Robotics to become our <strong>2026 Internal Moot Champions</strong>. Both teams delivered a compelling final, demonstrating impressive advocacy, legal research, preparation, and determination. We congratulate both finalists on their hard work and commitment throughout the competition.</p>
+                <p>Our sincere thanks to <strong>Hon. Judge Rajasinghe</strong> and <strong>Hon. Judge Bulamainaivalu</strong> for presiding over the final and sharing their time, knowledge, and valuable insights with our students.</p>
+                <p>We also extend our appreciation to <strong>Lizaz Collection</strong> for generously sponsoring the competition prizes.</p>
+            </div>
+        </article>
     </section>
 
     <!-- Featured Events -->
