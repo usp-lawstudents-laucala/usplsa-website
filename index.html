@@ -286,6 +286,37 @@
             text-align: center;
             color: #fff;
             padding: 100px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-intro {
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+            display: grid;
+            place-items: center;
+            opacity: 1;
+            visibility: visible;
+            transition: opacity 900ms ease, visibility 0s linear 900ms;
+        }
+
+        .hero-intro video {
+            width: min(52vw, 460px);
+            height: auto;
+            max-height: 50vh;
+            mix-blend-mode: screen;
+        }
+
+        .hero--intro-complete .hero-intro {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+
+        .hero-copy {
+            position: relative;
+            z-index: 0;
         }
 
         @media (max-width: 768px) {
@@ -1693,8 +1724,15 @@
 <!-- HOME PAGE -->
 <div id="home" class="page active">
     <div class="hero">
-        <h1>USPLSA | USP Law Students Association | University of the South Pacific</h1>
+        <div class="hero-intro" aria-hidden="true">
+            <video id="heroIntroVideo" autoplay muted playsinline loop preload="auto">
+                <source src="logo-animation.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="hero-copy">
+            <h1>USPLSA | USP Law Students Association | University of the South Pacific</h1>
             <p>USPLSA is the official Law Students Association of the University of the South Pacific (USP) at the Laucala Campus in Suva, Fiji. We represent and support our law students by organizing academic, professional, and social activities, advocating for their interests, and providing assistance throughout their law school journey.</p>
+        </div>
         </div>
 
     <!-- Quick Stats -->
@@ -2311,6 +2349,22 @@
 </footer>
 
 <script>
+    const hero = document.querySelector('.hero');
+    const heroIntroVideo = document.getElementById('heroIntroVideo');
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+    function finishHeroIntro() {
+        if (!hero || hero.classList.contains('hero--intro-complete')) return;
+        hero.classList.add('hero--intro-complete');
+        if (heroIntroVideo) heroIntroVideo.pause();
+    }
+
+    if (prefersReducedMotion.matches) {
+        finishHeroIntro();
+    } else {
+        window.setTimeout(finishHeroIntro, 10000);
+    }
+
     const pageTitles = {
         home: 'USPLSA | USP Law Students Association',
         about: 'About USPLSA | USP Law Students Association',
