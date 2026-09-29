@@ -1,0 +1,2637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#420f18">
+    <meta name="description" content="USPLSA - University of the South Pacific (USP) Law Students Association at Laucala Campus, Fiji. A law students association for USP law students, Pacific law students, and Fiji law students focused on mooting, workshops, and community events.">
+    <meta name="keywords" content="USPLSA, USP Law Students Association, USP law students, Fiji law students, mooting, law events, law society">
+    <meta name="google-site-verification" content="2H13PHJhX1fX2J8vkKm9fUKgpfAL3zdy56ScbB7W794" />
+    <meta name="msvalidate.01" content="F340F1EE7E82B6D6C577099AD6433527" />
+    <link rel="icon" type="image/jpeg" href="favicon.jpg" />
+    <link rel="shortcut icon" href="favicon.jpg" />
+    <link rel="canonical" href="https://usplsa.com/" />
+    <meta property="og:title" content="USPLSA | University of the South Pacific (USP) Law Students Association" />
+    <meta property="og:description" content="USPLSA events, mooting, workshops, and community activities at USP Laucala Campus, Fiji." />
+    <meta name="twitter:title" content="USPLSA | University of the South Pacific (USP) Law Students Association" />
+    <meta name="twitter:description" content="USPLSA events, mooting, workshops, and community activities at USP Laucala Campus, Fiji." />
+    <meta property="og:url" content="https://usplsa.com/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://i.ibb.co/Lh80K4TR/LSAHEROPC.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <title>USPLSA | University of the South Pacific (USP) Law Students Association | Fiji Law Students</title>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "USPLSA",
+      "alternateName": "USP Law Students Association",
+      "url": "https://usplsa.com/",
+      "description": "USPLSA is the University of the South Pacific Law Students Association at Laucala Campus, Fiji, supporting law students through events, mooting, workshops, and community activities.",
+      "sameAs": [
+        "https://www.facebook.com/share/1EbkZmQKBG/?mibextid=wwXIfr",
+        "https://instagram.com/usp_lawstudents_laucala"
+      ]
+    }
+    </script>
+    
+    <style>
+        :root {
+            --header-bg-color: #420f18;
+            --primary: #452103;
+            --accent: #bb6b00;
+            --secondary: #934b00;
+            --dark: #210f04;
+            --light-bg: #ffe6b3;
+            --radius: 14px;
+            --max-width: 1100px;
+            --gap: 25px;
+            --masi-opacity: 0.06;
+            --masi-size: 520px;
+            --masi-repeat: repeat;
+            --font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+
+        * { 
+            box-sizing: border-box; 
+            margin: 0;
+            padding: 0;
+        }
+
+        body { 
+            margin: 0; 
+            font-family: var(--font-family); 
+            background: var(--light-bg); 
+            color: var(--dark); 
+            line-height: 1.6; 
+        }
+
+        /* subtle masi print background using a pseudo-element */
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background-image: url('masi.jpg');
+            background-repeat: var(--masi-repeat);
+            background-position: center top;
+            background-size: var(--masi-size);
+            opacity: var(--masi-opacity);
+            pointer-events: none;
+            z-index: 0;
+            mix-blend-mode: multiply;
+        }
+
+        /* ensure main content stacks above the decorative background */
+        header, .page, footer { position: relative; z-index: 1; }
+
+        /* HEADER */
+        header {
+            background-color: var(--header-bg-color);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        header img { 
+            height: 70px; 
+            transition: transform 0.3s;
+        }
+
+        header img:hover {
+            transform: scale(1.05);
+        }
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .header-controls {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .announcement-wrapper {
+            position: relative;
+        }
+
+        .announcement-toggle {
+            position: relative;
+            display: grid;
+            place-items: center;
+            width: 2.7rem;
+            height: 2.7rem;
+            border: 1px solid rgba(255,255,255,0.35);
+            border-radius: 50%;
+            background: rgba(255,255,255,0.12);
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .announcement-toggle:hover {
+            background: rgba(255,255,255,0.22);
+        }
+
+        .announcement-toggle svg {
+            width: 1.25rem;
+            height: 1.25rem;
+            fill: currentColor;
+        }
+
+        .announcement-badge {
+            position: absolute;
+            top: -0.2rem;
+            right: -0.15rem;
+            min-width: 1.15rem;
+            height: 1.15rem;
+            padding: 0 0.22rem;
+            border-radius: 999px;
+            background: #f4c766;
+            color: var(--dark);
+            font-size: 0.7rem;
+            font-weight: 800;
+            line-height: 1.15rem;
+        }
+
+        .announcements-panel {
+            position: absolute;
+            top: calc(100% + 0.65rem);
+            right: 0;
+            z-index: 2100;
+            display: none;
+            width: min(340px, calc(100vw - 2rem));
+            padding: 1rem;
+            border-radius: 12px;
+            background: #fff;
+            color: var(--dark);
+            box-shadow: 0 14px 36px rgba(0,0,0,0.24);
+        }
+
+        .announcements-panel.open {
+            display: block;
+        }
+
+        .announcements-panel h2 {
+            margin: 0 0 0.7rem;
+            color: var(--primary);
+            font-size: 1.1rem;
+        }
+
+        .announcement-item {
+            padding: 0.8rem;
+            border-radius: 8px;
+            background: #fff7e7;
+        }
+
+        .announcement-item + .announcement-item {
+            margin-top: 0.6rem;
+        }
+
+        .announcement-item strong,
+        .announcement-item span {
+            display: block;
+        }
+
+        .announcement-item span {
+            margin-top: 0.2rem;
+            font-size: 0.9rem;
+        }
+
+        .announcement-link {
+            margin-top: 0.65rem;
+            border: 0;
+            background: none;
+            color: var(--secondary);
+            font: inherit;
+            font-weight: 700;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+
+        .announcement-toggle:focus-visible, .announcement-link:focus-visible {
+            outline: 3px solid #f4c766;
+            outline-offset: 3px;
+        }
+
+        nav a { 
+            color: #fff; 
+            margin-left: 1rem; 
+            text-decoration: none; 
+            font-weight: 600; 
+            transition: transform 220ms cubic-bezier(.2,.9,.2,1), color 180ms ease, background 180ms ease;
+            will-change: transform;
+            padding: 0.5rem 0.75rem;
+            border-radius: 6px;
+            font-size: 0.95rem;
+        }
+
+        nav a:hover { 
+            color: var(--accent);
+            background: rgba(255,255,255,0.1);
+        }
+
+        /* desktop-only hover-enlarge for nav links (no effect on touch devices) */
+        @media (hover: hover) and (pointer: fine) {
+            nav a:hover {
+                transform: translateY(-3px) scale(1.06);
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            nav a { transition: none !important; }
+            nav a:hover { transform: none !important; }
+        }
+
+        /* PAGE SYSTEM */
+        .page {
+            display: none;
+            animation: fadeIn 0.6s ease-in-out;
+        }
+
+        .page.active {
+            display: block;
+            animation: fadeIn 0.6s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { 
+                opacity: 0; 
+                transform: translateY(10px);
+            }
+            to { 
+                opacity: 1; 
+                transform: translateY(0);
+            }
+        }
+
+        /* HERO */
+        .hero {
+            background: linear-gradient(rgba(105,5,0,0.85), rgba(33,15,4,0.6)),
+                        url('hero.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            min-height: 70vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #fff;
+            padding: 100px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-intro {
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+            display: grid;
+            place-items: center;
+            opacity: 1;
+            visibility: visible;
+            transition: opacity 900ms ease, visibility 0s linear 900ms;
+        }
+
+        .hero-intro video {
+            width: min(52vw, 460px);
+            height: auto;
+            max-height: 50vh;
+            mix-blend-mode: screen;
+        }
+
+        .hero--intro-complete .hero-intro {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+
+        .hero-copy {
+            position: relative;
+            z-index: 0;
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                background-attachment: scroll;
+                min-height: 60vh;
+            }
+        }
+
+        /* Extra small screens: tighten header/nav and scale hero for mobile */
+        @media (max-width: 600px) {
+            header {
+                padding: 0.6rem 1rem;
+            }
+
+            header img {
+                height: 48px;
+            }
+
+            nav {
+                justify-content: center;
+                gap: 0.35rem;
+            }
+
+            nav a {
+                font-size: 0.9rem;
+                margin-left: 0;
+                padding: 0.35rem 0.5rem;
+                border-radius: 6px;
+            }
+
+            .hero {
+                padding: 60px 14px;
+                min-height: 55vh;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+                max-width: 92%;
+            }
+
+            /* scale decorative masi pattern down on small screens */
+            body::before {
+                background-size: 420px;
+                opacity: calc(var(--masi-opacity) * 0.95);
+                background-repeat: repeat;
+                background-position: center top;
+            }
+
+            .events-grid {
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 18px;
+                grid-auto-rows: 1fr;
+            }
+
+            .event-card {
+                padding: 18px;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .event-card .btn {
+                margin-top: auto;
+            }
+
+            .event-card .date {
+                font-size: 0.95rem;
+                padding: 6px 10px;
+            }
+
+        }
+
+        .hero h1 { 
+            font-size: 3.5rem; 
+            margin: 0 0 1rem 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            animation: slideDown 0.8s ease-out;
+            transition: transform 320ms cubic-bezier(.2,.9,.2,1), text-shadow 320ms ease;
+        }
+
+        .hero p { 
+            font-size: 1.3rem; 
+            max-width: 650px; 
+            margin: 0 auto 2rem;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+            animation: slideUp 0.8s ease-out;
+            transition: transform 320ms cubic-bezier(.2,.9,.2,1), opacity 320ms ease;
+        }
+
+        /* hover-enlarge effect for desktop (ignore on touch devices) */
+        @media (hover: hover) and (pointer: fine) {
+            .hero:hover h1 {
+                transform: scale(1.06) translateY(-4px);
+                text-shadow: 4px 6px 12px rgba(0,0,0,0.55);
+            }
+
+            .hero:hover p {
+                transform: translateY(-2px);
+                opacity: 0.98;
+            }
+        }
+
+        /* respect reduced motion preferences */
+        @media (prefers-reduced-motion: reduce) {
+            .hero h1, .hero p { transition: none !important; transform: none !important; }
+        }
+
+        @keyframes slideDown {
+            from { transform: translateY(-30px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            from { transform: translateY(30px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .hero .btn { 
+            background: var(--accent); 
+            color: #fff; 
+            margin-top: 1rem;
+            padding: 0.8rem 2rem;
+            font-size: 1.1rem;
+            animation: pulse 2s infinite;
+        }
+
+        .hero .btn:hover { 
+            background: #fff; 
+            color: var(--dark);
+            animation: none;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(187,107,0,0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(187,107,0,0); }
+            100% { box-shadow: 0 0 0 0 rgba(187,107,0,0); }
+        }
+
+        /* SECTIONS */
+        section { 
+            padding: 60px 20px; 
+            max-width: var(--max-width); 
+            margin: auto; 
+        }
+
+        h2 { 
+            color: var(--primary); 
+            font-size: 2.5rem; 
+            margin-bottom: 1.5rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60%;
+            height: 4px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+
+        /* ABOUT */
+        .about-content { 
+            display: grid; 
+            grid-template-columns: 1fr 1fr; 
+            gap: var(--gap);
+            align-items: center;
+        }
+
+        .about-text p {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .about-text ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .about-text ul li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(187,107,0,0.2);
+        }
+
+        .about-text ul li::before {
+            content: "";
+            display: inline-block;
+            width: 0.45rem;
+            height: 0.45rem;
+            margin: 0 0.7rem 0.1rem 0;
+            border: 2px solid var(--accent);
+            border-radius: 50%;
+        }
+
+        .about-image img { 
+            width: 100%; 
+            border-radius: var(--radius); 
+            object-fit: cover;
+            box-shadow: 0 5px 20px rgba(33,15,4,0.3);
+        }
+
+        .hague-image-frame {
+            position: relative;
+            width: 100%;
+            min-height: 320px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(33,15,4,0.3);
+            background: #f3e0b7;
+        }
+
+        .hague-image-frame img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .hague-image-frame img.active {
+            opacity: 1;
+        }
+
+        /* STATS */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--gap);
+            margin: 40px 0;
+            text-align: center;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: #fff;
+            padding: 30px 20px;
+            border-radius: var(--radius);
+            transition: 0.3s;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+        }
+
+        .stat-card h3 {
+            font-size: 2.5rem;
+            margin: 0;
+        }
+
+        .stat-card p {
+            margin: 0.5rem 0 0;
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        /* EXECUTIVES */
+        .executives-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: var(--gap);
+            margin-bottom: 40px;
+        }
+
+        .executive-card {
+            background: #fff;
+            padding: 25px 20px;
+            border-radius: var(--radius);
+            text-align: center;
+            box-shadow: 0 3px 12px rgba(33,15,4,0.15);
+            border: 2px solid transparent;
+            transition: 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .executive-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--accent);
+        }
+
+        .executive-card:hover { 
+            transform: translateY(-8px);
+            border-color: var(--accent);
+            box-shadow: 0 8px 25px rgba(33,15,4,0.25);
+        }
+
+        .executive-card img {
+            width: 130px;
+            height: 130px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-bottom: 1rem;
+            border: 3px solid var(--accent);
+        }
+
+        .executive-card h3 { 
+            color: var(--primary); 
+            margin: 0.5rem 0 0.25rem;
+            font-size: 1.2rem;
+        }
+
+        .executive-card .role { 
+            color: var(--secondary); 
+            font-weight: 600;
+            margin: 0 0 0.5rem;
+        }
+
+        .executive-card .bio { 
+            color: var(--dark); 
+            margin: 0;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .executive-card .email {
+            margin: 0.75rem 0 0;
+            font-size: 0.95rem;
+            color: var(--secondary);
+            word-break: break-word;
+        }
+
+        .executive-card .email a {
+            color: inherit;
+            text-decoration: none;
+            padding: 0.25rem 0.45rem;
+            border-radius: 8px;
+            display: inline-block;
+            transition: background 180ms ease, color 180ms ease, transform 140ms ease;
+        }
+
+        .executive-card .email a:hover {
+            text-decoration: none;
+            background: var(--accent);
+            color: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 14px rgba(33,15,4,0.12);
+        }
+
+        /* EVENTS */
+        .events-grid { 
+            display: flex; 
+            flex-direction: column;
+            gap: var(--gap); 
+            max-width: 1100px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .event-card:not(.featured-moot) {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            width: 100%;
+            padding: 25px;
+        }
+
+        .event-card:not(.featured-moot) img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+            background-color: #e9d6b0;
+            border-radius: 12px;
+            margin: 0;
+            display: block;
+            max-height: none;
+        }
+
+        .event-card:not(.featured-moot) h3 {
+            font-size: 24px;
+            margin: 0.5rem 0;
+            font-weight: 700;
+        }
+
+        .event-card:not(.featured-moot) a {
+            font-size: 16px;
+            text-decoration: none;
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        .event-card:not(.featured-moot) .date {
+            font-size: 15px;
+        }
+
+        @media (min-width: 768px) {
+            .event-card:not(.featured-moot) {
+                flex-direction: row;
+                align-items: flex-start;
+                padding: 32px;
+            }
+
+            .event-card:not(.featured-moot) img {
+                width: 35%;
+                max-height: 280px;
+                object-fit: contain;
+                flex-shrink: 0;
+            }
+
+            .event-card:not(.featured-moot) > :not(img) {
+                flex: 1;
+                min-width: 0;
+            }
+        }
+
+        .event-card {
+            background: #fff;
+            padding: 25px;
+            border-radius: var(--radius);
+            box-shadow: 0 3px 10px rgba(33,15,4,0.15);
+            transition: 0.3s;
+            border-left: 5px solid var(--accent);
+            color: var(--dark);
+            position: relative;
+        }
+
+        .event-card.featured-moot {
+            background: linear-gradient(135deg, var(--primary), var(--dark));
+            color: #fff;
+            border-left: 5px solid #f4c766;
+            box-shadow: 0 10px 28px rgba(33,15,4,0.2);
+            transform: none;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            padding: 1.25rem;
+            overflow: hidden;
+        }
+
+        .event-card.featured-moot > img {
+            width: 100%;
+            max-height: 420px;
+            object-fit: contain;
+            display: block;
+            border-radius: 14px;
+            background: rgba(66, 15, 24, 0.95);
+            padding: 0.5rem;
+            margin: 0;
+        }
+
+        .event-card.featured-moot .date,
+        .event-card.featured-moot .location,
+        .event-card.featured-moot h3,
+        .event-card.featured-moot p {
+            color: #fff;
+        }
+
+        .event-card.featured-moot .date {
+            background: rgba(244, 199, 102, 0.95);
+            color: var(--dark);
+            margin-bottom: 0;
+        }
+
+        .event-card.featured-moot .btn {
+            align-self: flex-start;
+            margin-top: auto;
+            background: #f4c766;
+            color: var(--dark);
+        }
+
+        .event-card.featured-moot .btn:hover {
+            background: #ffd77a;
+            color: var(--dark);
+        }
+
+
+        @media (max-width: 900px) {
+            .event-card.featured-moot {
+                grid-column: span 1;
+            }
+        }
+
+        .event-card .date {
+            display: inline-block;
+            background: var(--accent);
+            color: #fff;
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .event-card:not(.featured-moot) .countdown {
+            display: block;
+            color: var(--secondary);
+            font-size: 0.92rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+        }
+
+        .event-card h3 { 
+            color: var(--primary);
+            margin: 0.5rem 0;
+            font-size: 24px;
+        }
+
+        .event-card .location {
+            color: var(--secondary);
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+
+        .event-card:hover { 
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(33,15,4,0.25);
+        }
+
+        /* Event highlights: one featured event followed by clear, balanced cards. */
+        #home .events-grid,
+        #events .events-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            align-items: stretch;
+        }
+
+        #home .event-card.featured-moot,
+        #events .event-card.featured-moot {
+            grid-column: 1 / -1 !important;
+        }
+
+        #home .event-card:not(.featured-moot),
+        #events .event-card:not(.featured-moot) {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            padding: 0 0 1.25rem;
+            overflow: hidden;
+            border-left: 0;
+            border-top: 5px solid var(--accent);
+        }
+
+        #home .event-card:not(.featured-moot) img,
+        #events .event-card:not(.featured-moot) img {
+            width: 100%;
+            height: 180px;
+            max-height: none;
+            object-fit: cover;
+            border-radius: 0;
+            margin: 0 0 1rem;
+            flex: none;
+        }
+
+        #home .event-card:not(.featured-moot) > :not(img),
+        #events .event-card:not(.featured-moot) > :not(img) {
+            flex: none;
+            margin-left: 1.25rem;
+            margin-right: 1.25rem;
+        }
+
+        #home .event-card:not(.featured-moot) h3,
+        #events .event-card:not(.featured-moot) h3 {
+            font-size: 1.25rem;
+            line-height: 1.3;
+        }
+
+        #home .event-card:not(.featured-moot) .btn,
+        #events .event-card:not(.featured-moot) .btn {
+            align-self: flex-start;
+            margin-top: auto;
+            margin-bottom: 0;
+        }
+
+        /* HOME PAGE SPONSORS */
+        .sponsors-section {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: clamp(1.5rem, 4vw, 3rem);
+            border-radius: var(--radius);
+            background: linear-gradient(135deg, var(--primary), var(--dark));
+            color: #fff;
+            box-shadow: 0 10px 28px rgba(33,15,4,0.2);
+        }
+
+        .sponsors-section h2 {
+            color: #fff;
+            margin: 0.25rem 0 0.75rem;
+        }
+
+        .sponsors-kicker {
+            color: #f4c766;
+            font-size: 0.8rem;
+            font-weight: 800;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+
+        .sponsors-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: start;
+        }
+
+        .sponsors-content {
+            display: grid;
+            gap: 1.25rem;
+        }
+
+        .sponsors-intro {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            min-height: 100%;
+            padding-right: 0.5rem;
+        }
+
+        .sponsors-section p {
+            margin: 0 0 1.25rem;
+            line-height: 1.65;
+        }
+
+        .sponsor-placeholder {
+            min-height: 105px;
+            display: grid;
+            place-items: center;
+            padding: 1rem;
+            border: 1px dashed rgba(255,255,255,0.55);
+            border-radius: 10px;
+            background: rgba(255,255,255,0.08);
+            color: #ffe6b3;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+        .sponsor-placeholder small {
+            display: block;
+            margin-top: 0.4rem;
+            color: #fff;
+            font-size: 0.7rem;
+            font-weight: 500;
+            letter-spacing: 0;
+            text-transform: none;
+        }
+
+        .sponsor-card {
+            display: grid;
+            grid-template-columns: minmax(170px, 0.75fr) minmax(0, 2.1fr);
+            gap: 1.5rem;
+            align-items: start;
+            padding: 1.5rem 1.75rem;
+            border-radius: 14px;
+            background: #fff;
+            color: var(--dark);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+        }
+
+        .sponsor-card img {
+            width: 100%;
+            max-height: 180px;
+            object-fit: contain;
+            padding: 0.5rem;
+        }
+
+        .sponsor-card h3 {
+            margin: 0 0 0.55rem;
+            color: var(--primary);
+        }
+
+        .sponsor-card p {
+            margin: 0;
+            color: var(--dark);
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+
+        @media (max-width: 900px) {
+            #home .events-grid,
+            #events .events-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 600px) {
+            #home .events-grid,
+            #events .events-grid {
+                grid-template-columns: 1fr;
+            }
+
+            #home .event-card:not(.featured-moot) img,
+            #events .event-card:not(.featured-moot) img {
+                height: 200px;
+            }
+
+            .sponsors-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .sponsor-card {
+                grid-template-columns: 1fr;
+            }
+
+            .sponsor-card img {
+                max-width: 220px;
+                margin: 0 auto;
+            }
+        }
+
+        /* CONSTITUTION */
+        .constitution-section {
+            background:
+                linear-gradient(rgba(105, 5, 0, 0.72), rgba(33, 15, 4, 0.75)),
+                url('constitution.jpg');
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            padding: 40px;
+            border-radius: var(--radius);
+            box-shadow: 0 3px 12px rgba(33,15,4,0.1);
+            text-align: center;
+            margin-bottom: 50px;
+            border: 2px solid var(--accent);
+        }
+
+        .constitution-section .icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+
+        .constitution-section h2 {
+            display: block;
+        }
+
+        .constitution-section h2::after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .constitution-section h2,
+        .constitution-section p,
+        .constitution-section small {
+            color: #fff;
+        }
+
+        .constitution-section a { 
+            color: #ffe6b3; 
+            font-weight: bold; 
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: 0.3s;
+        }
+
+        .constitution-section a:hover { 
+            color: #fff;
+            text-decoration: underline;
+        }
+
+        /* MERCH */
+        .merch-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+            gap: var(--gap); 
+        }
+
+        .merch-item {
+            background: #fff;
+            border-radius: var(--radius);
+            box-shadow: 0 3px 12px rgba(33,15,4,0.15);
+            text-align: center;
+            transition: 0.3s;
+            border: 2px solid transparent;
+            overflow: hidden;
+        }
+
+        .merch-item:hover { 
+            transform: translateY(-8px);
+            border-color: var(--accent);
+            box-shadow: 0 10px 30px rgba(33,15,4,0.3);
+        }
+
+        .merch-item img { 
+            width: 120%; 
+            min-width: 120%;
+            height: 280px;
+            object-fit: cover;
+            display: block;
+            transform: translateX(0);
+            animation: merchSlide 10s ease-in-out infinite alternate;
+        }
+
+        @keyframes merchSlide {
+            from { transform: translateX(0); }
+            to { transform: translateX(-20%); }
+        }
+
+        .merch-info {
+            padding: 20px;
+        }
+
+        .merch-item h3 { 
+            color: var(--primary);
+            margin: 0 0 0.5rem;
+        }
+
+        .merch-item .price {
+            font-size: 1.5rem;
+            color: var(--accent);
+            font-weight: 700;
+            margin: 0.5rem 0;
+        }
+
+        .merch-item p { 
+            color: var(--dark);
+            margin-bottom: 1rem;
+        }
+
+        /* TESTIMONIALS */
+        .testimonials-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+            gap: var(--gap);
+            margin-top: 40px;
+        }
+
+        .testimonial {
+            background: #fff;
+            padding: 30px;
+            border-radius: var(--radius);
+            border-left: 6px solid var(--accent);
+            box-shadow: 0 3px 12px rgba(33,15,4,0.15);
+            color: var(--dark);
+            position: relative;
+        }
+
+        .testimonial::before {
+            content: '"';
+            font-size: 5rem;
+            color: var(--accent);
+            opacity: 0.3;
+            position: absolute;
+            top: -20px;
+            left: 10px;
+            font-family: serif;
+        }
+
+        .testimonial p {
+            font-style: italic;
+            margin-bottom: 1rem;
+            font-size: 1.05rem;
+        }
+
+        .testimonial .author { 
+            color: var(--secondary);
+            font-weight: 700;
+            font-style: normal;
+        }
+
+        /* CAMPUS SOCIAL */
+        .campus-social {
+            display: grid;
+            grid-template-columns: minmax(0, 1.15fr) minmax(260px, 0.85fr);
+            overflow: hidden;
+            border-radius: var(--radius);
+            background: #fff;
+            box-shadow: 0 12px 30px rgba(33,15,4,0.2);
+        }
+
+        .campus-social-intro {
+            padding: clamp(2rem, 5vw, 4rem);
+            background: linear-gradient(135deg, var(--header-bg-color), #762331);
+            color: #fff;
+        }
+
+        .campus-social-kicker {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+            color: #ffd27a;
+            font-size: 0.8rem;
+            font-weight: 800;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+
+        .campus-social-kicker::before {
+            content: "";
+            width: 0.55rem;
+            height: 0.55rem;
+            border-radius: 50%;
+            background: #ffd27a;
+            box-shadow: 0 0 0 5px rgba(255, 210, 122, 0.18);
+        }
+
+        .campus-social h2 {
+            margin: 0 0 0.8rem;
+            color: #fff;
+            text-align: left;
+        }
+
+        .campus-social h2::after { display: none; }
+
+        .campus-social-intro p {
+            max-width: 38rem;
+            opacity: 0.92;
+        }
+
+        .social-feed-card {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 1.5rem;
+            padding: clamp(2rem, 4vw, 3.5rem);
+            background: #fff8ea;
+            border-left: 5px solid var(--accent);
+        }
+
+        .social-feed-card svg {
+            width: 2.75rem;
+            height: 2.75rem;
+            fill: #1877f2;
+        }
+
+        .social-feed-card h3 {
+            margin-top: 0.7rem;
+            color: var(--primary);
+            font-size: 1.35rem;
+        }
+
+        .social-feed-card p { margin-top: 0.4rem; }
+
+        .social-feed-card .btn {
+            align-self: flex-start;
+            background: #1877f2;
+            color: #fff;
+        }
+
+        .social-feed-card .btn:hover {
+            background: #0d5fc2;
+            color: #fff;
+        }
+
+        /* BUTTONS */
+        .btn { 
+            display: inline-block; 
+            padding: 0.7rem 1.5rem; 
+            border-radius: 8px; 
+            background: var(--primary); 
+            color: #fff; 
+            text-decoration: none; 
+            font-weight: 700; 
+            transition: 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn:hover { 
+            background: var(--accent); 
+            color: var(--dark);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        /* FOOTER */
+        footer { 
+            background: var(--header-bg-color); 
+            color: #fff; 
+            padding: 50px 20px 30px; 
+            margin-top: 40px;
+        }
+
+        .footer-content {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--gap);
+            text-align: left;
+        }
+
+        .footer-section h3 {
+            color: var(--accent);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .footer-section p {
+            margin-bottom: 0.5rem;
+            opacity: 0.9;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 0.75rem;
+            align-items: center;
+            justify-content: flex-start;
+            margin-top: 0.5rem;
+        }
+
+        .social-link {
+            display: inline-flex;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.12);
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .social-link:hover {
+            background: rgba(255,255,255,0.25);
+        }
+
+        /* Consistent, professional line icons */
+        .icon-sprite { position: absolute; width: 0; height: 0; overflow: hidden; }
+
+        .icon {
+            width: 1em;
+            height: 1em;
+            flex: 0 0 auto;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 1.9;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            vertical-align: -0.14em;
+        }
+
+        .date, .location, .contact-item, .chat-toggle { display: inline-flex; align-items: center; gap: 0.45rem; }
+        .date .icon, .location .icon { color: var(--secondary); }
+        .contact-item .icon { color: var(--accent); }
+        .chat-toggle .icon { width: 1.1rem; height: 1.1rem; }
+
+        .social-link svg {
+            width: 18px;
+            height: 18px;
+            fill: currentColor;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.2);
+            opacity: 0.8;
+        }
+
+        .chat-toggle {
+            position: fixed;
+            right: 16px;
+            bottom: 16px;
+            z-index: 2000;
+            border: none;
+            border-radius: 999px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: #fff;
+            padding: 0.9rem 1rem;
+            font-size: 0.95rem;
+            font-weight: 700;
+            box-shadow: 0 8px 24px rgba(33,15,4,0.25);
+            cursor: pointer;
+            touch-action: manipulation;
+        }
+
+        .chat-widget {
+            position: fixed;
+            right: 12px;
+            bottom: 74px;
+            width: min(360px, calc(100vw - 24px));
+            max-height: min(480px, calc(100dvh - 100px));
+            display: none;
+            flex-direction: column;
+            background: #fff;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 14px 40px rgba(33,15,4,0.24);
+            z-index: 2000;
+        }
+
+        .chat-widget.open {
+            display: flex;
+        }
+
+        .chat-header {
+            background: var(--header-bg-color);
+            color: #fff;
+            padding: 1rem 1rem 0.85rem;
+        }
+
+        .skip-link {
+            position: fixed;
+            top: 0.75rem;
+            left: 0.75rem;
+            z-index: 3000;
+            transform: translateY(-160%);
+            background: #fff;
+            color: var(--dark);
+            padding: 0.65rem 0.9rem;
+            border-radius: 8px;
+            font-weight: 700;
+            text-decoration: none;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+        }
+
+        .skip-link:focus {
+            transform: translateY(0);
+            outline: 3px solid #f4c766;
+        }
+
+        .chat-header-row {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 0.75rem;
+        }
+
+        .chat-close {
+            appearance: none;
+            border: 0;
+            border-radius: 50%;
+            width: 2rem;
+            height: 2rem;
+            background: rgba(255,255,255,0.16);
+            color: #fff;
+            font-size: 1.35rem;
+            line-height: 1;
+            cursor: pointer;
+        }
+
+        .chat-header strong {
+            display: block;
+            font-size: 1rem;
+        }
+
+        .chat-header small {
+            opacity: 0.9;
+        }
+
+        .chat-messages {
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.7rem;
+            overflow-y: auto;
+            background: #fffaf1;
+            min-height: 220px;
+            max-height: 320px;
+        }
+
+        .chat-suggestions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.45rem;
+            padding: 0 1rem 0.85rem;
+            background: #fffaf1;
+        }
+
+        .chat-suggestion, .chat-action {
+            border: 1px solid #ddbd78;
+            border-radius: 999px;
+            background: #fff;
+            color: var(--dark);
+            padding: 0.42rem 0.68rem;
+            font: inherit;
+            font-size: 0.82rem;
+            line-height: 1.2;
+            cursor: pointer;
+        }
+
+        .chat-action {
+            margin-top: 0.6rem;
+            background: var(--primary);
+            border-color: var(--primary);
+            color: #fff;
+        }
+
+        .message {
+            max-width: 85%;
+            padding: 0.7rem 0.85rem;
+            border-radius: 12px;
+            font-size: 0.95rem;
+            line-height: 1.45;
+        }
+
+        .message.bot {
+            background: #f4e3bf;
+            color: var(--dark);
+            align-self: flex-start;
+        }
+
+        .message.user {
+            background: var(--accent);
+            color: #fff;
+            align-self: flex-end;
+        }
+
+        .chat-form {
+            display: flex;
+            border-top: 1px solid #f0e2c4;
+            padding: 0.75rem;
+            gap: 0.5rem;
+            background: #fff;
+        }
+
+        .chat-form input {
+            flex: 1;
+            border: 1px solid #e2c88f;
+            border-radius: 999px;
+            padding: 0.7rem 0.9rem;
+            font: inherit;
+        }
+
+        .chat-form button {
+            border: none;
+            border-radius: 999px;
+            background: var(--primary);
+            color: #fff;
+            padding: 0.7rem 0.95rem;
+            cursor: pointer;
+            font-weight: 700;
+        }
+
+        .chat-toggle:focus-visible, .chat-close:focus-visible, .chat-form input:focus-visible,
+        .chat-form button:focus-visible, .chat-suggestion:focus-visible, .chat-action:focus-visible {
+            outline: 3px solid #f4c766;
+            outline-offset: 2px;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 1024px) {
+            .about-content { 
+                grid-template-columns: 1fr; 
+            }
+            .campus-social { grid-template-columns: 1fr; }
+            .social-feed-card { border-left: none; border-top: 5px solid var(--accent); }
+            .executives-grid { 
+                grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); 
+            }
+        }
+
+        @media (max-width: 768px) {
+            header { 
+                flex-direction: column; 
+                gap: 15px;
+                padding: 1rem;
+            }
+
+            .chat-toggle {
+                right: 12px;
+                bottom: 12px;
+                padding: 0.85rem 0.95rem;
+                font-size: 0.9rem;
+            }
+
+            .chat-widget {
+                right: 8px;
+                left: 8px;
+                bottom: 70px;
+                width: auto;
+                max-width: none;
+            }
+            
+            nav {
+                justify-content: center;
+            }
+
+            .header-controls {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            nav a {
+                margin-left: 0;
+                font-size: 0.85rem;
+                padding: 0.4rem 0.6rem;
+            }
+            
+            .hero h1 { 
+                font-size: 2.2rem; 
+            }
+            .hero p { 
+                font-size: 1rem; 
+                padding: 0 10px; 
+            }
+            .hero {
+                min-height: 60vh;
+            }
+            
+            .merch-item {
+                overflow-x: auto;
+                overflow-y: hidden;
+            }
+            
+            .merch-item img {
+                height: 280px;
+                width: auto;
+                min-width: 100%;
+                object-fit: contain;
+            }
+            h2 {
+                font-size: 2rem;
+            }
+            .constitution-section {
+                padding: 25px;
+            }
+        }
+
+        @media (max-width: 520px) {
+            .merch-grid { 
+                grid-template-columns: 1fr; 
+            }
+            .hero h1 { 
+                font-size: 1.7rem; 
+            }
+            .hero p { 
+                font-size: 0.9rem; 
+            }
+            nav a {
+                font-size: 0.8rem;
+                padding: 0.3rem 0.5rem;
+            }
+            .executives-grid {
+                grid-template-columns: 1fr;
+            }
+            /* Make the featured event countdown fit on small screens */
+            .event-card.featured-moot .countdown {
+                gap: 0.3rem;
+                margin: 0.35rem auto 0.6rem;
+            }
+
+            .event-card.featured-moot .countdown-unit {
+                min-width: 52px;
+                padding: 0.35rem 0.45rem;
+                border-radius: 10px;
+            }
+
+            .event-card.featured-moot .countdown-unit strong {
+                font-size: 1.15rem;
+            }
+
+            .event-card.featured-moot .countdown-unit small {
+                font-size: 0.62rem;
+                letter-spacing: 0.12em;
+            }
+
+            /* reduce masi intensity on very small screens */
+            :root { --masi-opacity: 0.03; --masi-size: 320px; }
+        }
+    </style>
+</head>
+<body>
+<svg class="icon-sprite" aria-hidden="true">
+    <symbol id="icon-calendar" viewBox="0 0 24 24"><rect x="3" y="4.5" width="18" height="16" rx="2"/><path d="M8 2.5v4M16 2.5v4M3 9.5h18M8 14h.01M12 14h.01M16 14h.01M8 17.5h.01M12 17.5h.01"/></symbol>
+    <symbol id="icon-pin" viewBox="0 0 24 24"><path d="M20 10.2c0 5.2-8 11.3-8 11.3S4 15.4 4 10.2a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+    <symbol id="icon-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></symbol>
+    <symbol id="icon-phone" viewBox="0 0 24 24"><path d="M22 16.9v2.6a2 2 0 0 1-2.2 2A19.8 19.8 0 0 1 2.5 4.2 2 2 0 0 1 4.5 2H7a2 2 0 0 1 2 1.7c.1 1 .4 2 .8 2.9a2 2 0 0 1-.5 2.1L8.2 9.8a16 16 0 0 0 6 6l1.1-1.1a2 2 0 0 1 2.1-.5c.9.4 1.9.7 2.9.8a2 2 0 0 1 1.7 1.9Z"/></symbol>
+    <symbol id="icon-download" viewBox="0 0 24 24"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></symbol>
+    <symbol id="icon-message" viewBox="0 0 24 24"><path d="M21 11.5a8 8 0 0 1-8.5 8 9.5 9.5 0 0 1-4-.9L3 20l1.4-4.1A8 8 0 1 1 21 11.5Z"/></symbol>
+</svg>
+<a class="skip-link" href="#main-content">Skip to main content</a>
+
+<header>
+    <img src="https://i.ibb.co/LdZ8HyYp/logo.png" alt="USPLSA Logo">
+    <div class="header-controls">
+        <nav>
+            <a href="#home" onclick="showPage('home', event)" aria-current="page">Home</a>
+            <a href="#about" onclick="showPage('about', event)">About</a>
+            <a href="#events" onclick="showPage('events', event)">Events</a>
+            <a href="#executives" onclick="showPage('executives', event)">Executives</a>
+            <a href="#constitution" onclick="showPage('constitution', event)">Constitution</a>
+            <a href="#merch" onclick="showPage('merch', event)">Merch</a>
+        </nav>
+        <div class="announcement-wrapper">
+            <button class="announcement-toggle" id="announcementToggle" type="button" aria-label="Open announcements" aria-expanded="false" aria-controls="announcementsPanel">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22a2.4 2.4 0 0 0 2.38-2h-4.76A2.4 2.4 0 0 0 12 22Zm7-6v-5a7 7 0 0 0-5.5-6.84V3a1.5 1.5 0 0 0-3 0v1.16A7 7 0 0 0 5 11v5l-2 2v1h18v-1l-2-2Z"/></svg>
+            </button>
+            <section class="announcements-panel" id="announcementsPanel" aria-label="Announcements" aria-hidden="true">
+                <h2>Announcements</h2>
+                <div class="announcement-item">
+                    <strong>Upcoming events</strong>
+                    <span>Dates and venues are being confirmed. Check the Events page for updates.</span>
+                </div>
+                <button class="announcement-link" id="viewAnnouncements" type="button">View all events</button>
+            </section>
+        </div>
+    </div>
+</header>
+
+<main id="main-content" tabindex="-1">
+
+<!-- HOME PAGE -->
+<div id="home" class="page active">
+    <div class="hero">
+        <div class="hero-intro" aria-hidden="true">
+            <video id="heroIntroVideo" autoplay muted playsinline loop preload="auto">
+                <source src="logo-animation.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="hero-copy">
+            <h1>USPLSA | USP Law Students Association | University of the South Pacific</h1>
+            <p>USPLSA is the official Law Students Association of the University of the South Pacific (USP) at the Laucala Campus in Suva, Fiji. We represent and support our law students by organizing academic, professional, and social activities, advocating for their interests, and providing assistance throughout their law school journey.</p>
+        </div>
+        </div>
+
+    <!-- Quick Stats -->
+    <section>
+        <div class="stats-grid">
+            <div class="stat-card">
+                <h3>200+</h3>
+                <p>Active Members</p>
+            </div>
+            <div class="stat-card">
+                <h3>10</h3>
+                <p>Annual Events</p>
+            </div>
+            <div class="stat-card">
+                <h3>100%</h3>
+                <p>Student-Led</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Events -->
+    <section>
+        <h2>Upcoming Events</h2>
+        <div class="events-grid">
+            <div class="event-card">
+                <img src="irac.jpg" alt="IRAC & Referencing Workshops">
+                <span class="date"><svg class="icon" aria-hidden="true"><use href="#icon-calendar"/></svg>Date TBD</span>
+                <h3>IRAC & Referencing Workshops</h3>
+                <p class="location"><svg class="icon" aria-hidden="true"><use href="#icon-pin"/></svg>Venue TBD</p>
+                <p>Learn IRAC, AGLC, and SOL referencing styles. Essential for first-years and anyone wanting to improve legal writing.</p>
+            </div>
+            <div class="event-card">
+                <img src="metgala.jpg" alt="USPLSA Annual Gala">
+                <span class="date"><svg class="icon" aria-hidden="true"><use href="#icon-calendar"/></svg>Date TBD</span>
+                <h3>USPLSA Annual Gala</h3>
+                <p class="location"><svg class="icon" aria-hidden="true"><use href="#icon-pin"/></svg>Venue TBD</p>
+                <p>Dress up, celebrate, and socialize. Our final event of the year – not to be missed.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Inter-Tertiary Moot Competition Sponsor -->
+    <section aria-labelledby="sponsors-heading">
+        <div class="sponsors-section">
+            <div class="sponsors-content">
+                <div class="sponsors-intro" aria-label="Inter-Tertiary Moot Competition sponsorship intro">
+                    <span class="sponsors-kicker">Inter-Tertiary Moot Competition 2026</span>
+                    <h2 id="sponsors-heading">Official Sponsor</h2>
+                    <p>We proudly acknowledge the Fijian Competition and Consumer Commission (FCCC) as the major sponsor of the 2026 Inter-Tertiary Moot Competition.</p>
+                </div>
+                <article class="sponsor-card" aria-label="Fijian Competition and Consumer Commission sponsor information">
+                    <img src="sponsor1.jpg" alt="Fijian Competition and Consumer Commission logo">
+                    <div>
+                        <h3>Fijian Competition and Consumer Commission (FCCC)</h3>
+                        <p>The Fijian Competition and Consumer Commission (FCCC) is Fiji's independent regulator responsible for promoting fair competition, protecting consumer rights, and fostering efficient, transparent markets. FCCC enforces competition and consumer protection laws, investigates anti-competitive conduct, monitors market practices, regulates prices in designated sectors, and advocates for fair trading across the country. Through its regulatory and enforcement functions, FCCC helps ensure that consumers are treated fairly while encouraging businesses to compete on a level playing field, contributing to a stronger and more resilient Fijian economy. We encourage our students and members of the public to learn more about FCCC's work and to reach out to the Commission for information, guidance, or assistance on competition and consumer protection matters.</p>
+                    </div>
+                </article>
+                <article class="sponsor-card" aria-label="Matuku Visual Productions and TO1 Events sponsor information">
+                    <img src="matuku.jpg" alt="Matuku Visual Productions and TO1 Events logo">
+                    <div>
+                        <h3>Matuku Visual Productions / TO1 Events</h3>
+                        <p>Matuku Visual Productions and TO1 Events provided sound system services and livestream assistance during our first inter-tertiary match, helping bring the event to life for our audience and supporting a smooth and professional experience.</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- General USPLSA Sponsorship -->
+    <section aria-labelledby="general-sponsors-heading">
+        <div class="sponsors-section">
+            <div class="sponsors-layout">
+                <div>
+                    <span class="sponsors-kicker">Partner with USPLSA</span>
+                    <h2 id="general-sponsors-heading">General Sponsorship Opportunities</h2>
+                    <p>Support USPLSA's academic, professional and community activities throughout the year. Your organisation and brand can be featured here while helping create meaningful opportunities for USP law students.</p>
+                    <a class="btn" href="mailto:usplsaexecutives@gmail.com?subject=USPLSA%20General%20Sponsorship%20Enquiry">Become a general sponsor</a>
+                </div>
+                <div class="sponsor-placeholders" aria-label="General USPLSA sponsor logos and banners">
+                    <div class="sponsor-placeholder">Your logo here<small>General sponsor logos and banners coming soon</small></div>
+                    <div class="sponsor-placeholder">Your brand here<small>Show your support for future legal professionals</small></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Hague Debate Achievement -->
+    <section>
+        <h2>USP at The Hague</h2>
+        <div class="about-content" style="align-items: flex-start; gap: 2rem;">
+            <div class="about-text">
+                <p>USP has excelled at The Hague Inter-University Law Debate over the years, building a strong reputation for advocacy, preparation, and excellence on the international stage.</p>
+                <p><strong>In 2024, our team were the Vice Champions of this prestigious international competition.</strong></p>
+                <p>In 2026, our team also reached the 1/8 finals, further highlighting the strength and consistency of USP’s advocacy at The Hague.</p>
+                <p>This achievement reflects the dedication of our students, mentors, and the broader USP law community in representing Fiji and the Pacific with distinction.</p>
+            </div>
+            <div class="about-image">
+                <div class="hague-image-frame" id="hagueImageFrame">
+                    <img src="hague24.jpg" alt="USP team at The Hague debate 2024" class="active">
+                    <img src="hague25.jpg" alt="USP team at The Hague debate 2025">
+                    <img src="hague26.jpg" alt="USP team at The Hague debate 2026">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Campus Social -->
+    <section aria-labelledby="campus-social-heading">
+        <div class="campus-social">
+            <div class="campus-social-intro">
+                <span class="campus-social-kicker">Campus social</span>
+                <h2 id="campus-social-heading">Stay connected with USPLSA</h2>
+                <p>Follow our Facebook page for event notices, student highlights, photos, and the latest news from the USP law community.</p>
+            </div>
+            <div class="social-feed-card">
+                <div>
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 5 3.66 9.14 8.44 9.88v-6.99H7.9v-2.9h2.54V9.79c0-2.51 1.49-3.89 3.77-3.89 1.09 0 2.23.2 2.23.2v2.45h-1.25c-1.23 0-1.61.76-1.61 1.54v1.84h2.74l-.44 2.9h-2.3V22C18.34 21.14 22 17 22 12z"/></svg>
+                    <h3>USPLSA on Facebook</h3>
+                    <p>See what the association is doing now and join the conversation.</p>
+                </div>
+                <a href="https://www.facebook.com/share/1EbkZmQKBG/?mibextid=wwXIfr" class="btn" target="_blank" rel="noopener noreferrer">Visit our Facebook page</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section>
+        <h2>What Our Members Say</h2>
+        <div class="testimonials-grid">
+            <div class="testimonial">
+                <p>"I feel incredibly grateful and blessed to be part of the USPLSA community, which brings together students from all walks of life. Through online assignments, tutorials, and especially the study groups, it has been instrumental in fostering connection and collaboration."</p>
+                <p class="author">Verenaisi Tukana, USP Law Graduate</p>
+            </div>
+            <div class="testimonial">
+                <p>"The USPLSA has been instrumental in helping me connect with my fellow law students through their engaging activities. They've also made the transition from high school to university much smoother by providing the guidance and support I needed as a first-year."</p>
+                <p class="author">Paula Volatabu, First-Year Law Student, USP Laucala Campus</p>
+            </div>
+            <div class="testimonial">
+                <p>"My journey at the University of the South Pacific School of Law had been challenging but it has been incredibly rewarding. The unwavering support and friendships from my fellow students from the USPLSA has made every challenge easier to overcome. I will forever be grateful for the memories, friendships and invaluable lessons that shaped me during my journey."</p>
+                <p class="author">Adi Salaseini Gonelevu, Law Graduate; Former Hague Debate Assistant Coach &amp; Captain</p>
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- ABOUT PAGE -->
+<div id="about" class="page">
+    <section>
+        <h2>About USPLSA</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <p>
+                    USPLSA, the USP Law Students Association, is the official student body representing 
+                    law students at the University of the South Pacific. We exist to unify law students, 
+                    provide accessible academic resources, and foster a strong sense of community 
+                    among future legal professionals.
+                </p>
+                <p><strong>Our Mission:</strong></p>
+                <ul>
+                    <li>Advocate for student interests and welfare</li>
+                    <li>Organize academic and professional development events</li>
+                    <li>Facilitate peer support and mentorship programs</li>
+                        <li>Build lasting networks among law students and alumni</li>
+                </ul>
+                <p><strong>Our Vision:</strong> To be the leading student association that nurtures exceptional legal professionals committed to justice and service in the Pacific region and beyond.</p>
+            </div>
+            <div class="about-image">
+                <img src="https://i.ibb.co/Lh80K4TR/LSAHEROPC.jpg" alt="USP Law Students">
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- EVENTS PAGE -->
+<div id="events" class="page">
+    <section>
+        <h2>Upcoming Events</h2>
+        <p style="margin-bottom: 2rem; font-size: 1.1rem;">
+            Stay engaged with our diverse range of events designed to enhance your legal education, professional growth, and community spirit. Dates and venues are being confirmed – check back soon for registration details!
+        </p>
+        <div class="events-grid">
+            <div class="event-card">
+                <img src="irac.jpg" alt="IRAC & Referencing Workshops">
+                <span class="date"><svg class="icon" aria-hidden="true"><use href="#icon-calendar"/></svg>Date TBD</span>
+                <h3>IRAC & Referencing Workshops</h3>
+                <p class="location"><svg class="icon" aria-hidden="true"><use href="#icon-pin"/></svg>Venue TBD</p>
+                <p>The IRAC (Issue, Rule, Application, Conclusion) framework is the standard structure for legal problem-solving used in law schools, exams, and professional practice. Proper legal referencing is essential for avoiding plagiarism and maintaining academic integrity.</p>
+            </div>
+            <div class="event-card">
+                <img src="metgala.jpg" alt="USPLSA Annual Gala">
+                <span class="date"><svg class="icon" aria-hidden="true"><use href="#icon-calendar"/></svg>Date TBD</span>
+                <h3>USPLSA Annual Gala</h3>
+                <p class="location"><svg class="icon" aria-hidden="true"><use href="#icon-pin"/></svg>Venue TBD</p>
+                <p>Dress up, celebrate, and socialize. Our final event of the year – not to be missed.</p>
+            </div>
+            <div class="event-card">
+                <img src="sportsday.jpg" alt="Sports Day">
+                <span class="date"><svg class="icon" aria-hidden="true"><use href="#icon-calendar"/></svg>Date TBD</span>
+                <h3>Sports Day</h3>
+                <p class="location"><svg class="icon" aria-hidden="true"><use href="#icon-pin"/></svg>Venue TBD</p>
+                <p>A day of friendly athletic and team games designed to promote physical wellbeing, camaraderie, and a break from legal studies.</p>
+            </div>
+            <div class="event-card">
+                <img src="picnic.jpg" alt="Picnic">
+                <span class="date"><svg class="icon" aria-hidden="true"><use href="#icon-calendar"/></svg>Date TBD</span>
+                <h3>Picnic</h3>
+                <p class="location"><svg class="icon" aria-hidden="true"><use href="#icon-pin"/></svg>Venue TBD</p>
+                <p>A relaxed social gathering outdoors for members to network, unwind, and build community outside the academic environment.</p>
+            </div>
+            <div class="event-card">
+                <img src="parliament.jpeg" alt="Parliament Visit">
+                <span class="date"><svg class="icon" aria-hidden="true"><use href="#icon-calendar"/></svg>Date TBD</span>
+                <h3>Parliament Visit</h3>
+                <p class="location"><svg class="icon" aria-hidden="true"><use href="#icon-pin"/></svg>Venue TBD</p>
+                <p>An educational tour of the national parliament to observe legislative processes and understand the intersection of law and governance.</p>
+            </div>
+            <div class="event-card">
+                <img src="AG.jpeg" alt="AG's Office Visit">
+                <span class="date"><svg class="icon" aria-hidden="true"><use href="#icon-calendar"/></svg>Date TBD</span>
+                <h3>AG's Office Visit</h3>
+                <p class="location"><svg class="icon" aria-hidden="true"><use href="#icon-pin"/></svg>Venue TBD</p>
+                <p>A guided visit to the Office of the Attorney General, offering insights into legal advisory roles, policy development, and public legal work.</p>
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- INTER-TERTIARY MOOT PAGE -->
+<div id="interTertiaryMoot" class="page">
+    <section>
+        <h2>Inter-Tertiary Moot – Representing USP in Fiji</h2>
+        <p>The Inter-Tertiary Moot is a mooting competition held within Fiji, bringing together law students from USP, Fiji National University (FNU), and The University of Fiji (UNIFIJI). These teams compete before a panel of judges comprising legal practitioners, academics, and occasionally members of the judiciary.</p>
+        <p class="location"><svg class="icon" aria-hidden="true"><use href="#icon-pin"/></svg>USP Performance Centre</p>
+        <p>Each team prepares written submissions and delivers oral arguments on a challenging legal problem.</p>
+        <h3>Why participate?</h3>
+        <ul>
+            <li>Gain experience competing against students from other Fijian institutions</li>
+            <li>Network with legal professionals and fellow law students</li>
+            <li>Build confidence in oral argument and legal reasoning</li>
+            <li>Add a prestigious line to your CV</li>
+        </ul>
+        <p>The winner of the USPLSA Internal Moot earns the right to represent USP at the Inter-Tertiary Moot in Fiji.</p>
+        <a href="#" class="btn" onclick="showPage('events')">Back to Events</a>
+    </section>
+</div>
+
+<!-- INTERNAL MOOT PAGE -->
+<div id="internalMoot" class="page">
+    <section>
+        <h2>USPLSA Internal Moot – Your Pathway to Advocacy</h2>
+        <p>The USPLSA Internal Moot is the flagship mooting competition within USP's School of Law, organized by the USP Law Students Association. Open to all enrolled law students, it serves as both a training ground for novice mooters and the official selection pathway for students wishing to represent USP at the Inter-Tertiary Moot in Fiji.</p>
+        <p>Participants are paired into teams and assigned a legal problem. Each team prepares written memorials and presents oral submissions before a panel of judges comprising senior law students, tutors, and legal practitioners.</p>
+        <h3>What you will gain:</h3>
+        <ul>
+            <li>Hands-on experience in legal research and writing</li>
+            <li>Practice in structuring persuasive oral arguments</li>
+            <li>Feedback from experienced mooters and legal professionals</li>
+            <li>The opportunity to represent USP at the Inter-Tertiary Moot</li>
+        </ul>
+        <p>The USPLSA Internal Moot is held in Semester 2. No prior mooting experience is required. Check the Events page for future competition details.</p>
+        <a href="#" class="btn" onclick="showPage('events')">Back to Events</a>
+    </section>
+</div>
+
+<!-- IRAC WORKSHOP PAGE -->
+<div id="iracWorkshop" class="page">
+    <section>
+        <h2>IRAC and Referencing Workshop – Master the Foundations of Legal Writing</h2>
+        <p>The IRAC (Issue, Rule, Application, Conclusion) framework is the standard structure for legal problem-solving used in law schools, exams, and professional practice. Proper legal referencing is essential for avoiding plagiarism and maintaining academic integrity.</p>
+        <p>This workshop, organized by the USPLSA, will cover both referencing styles required in the USP School of Law:</p>
+        <ul>
+            <li><strong>AGLC</strong> (Australian Guide to Legal Citation) – for legal sources such as cases and legislation</li>
+            <li><strong>SOL</strong> (School of Law) – for specific faculty requirements and non-legal sources</li>
+        </ul>
+        <h3>Topics include:</h3>
+        <ul>
+            <li>Identifying the legal Issue in a problem question</li>
+            <li>Finding and stating the relevant Rule of law</li>
+            <li>Applying the law to the facts (Application/Analysis)</li>
+            <li>Reaching a clear Conclusion</li>
+            <li>AGLC and SOL referencing: footnotes, cases, legislation, and secondary sources</li>
+            <li>Common mistakes and how to avoid them</li>
+        </ul>
+        <p>Date: TBC | Time: TBC | Venue: TBC</p>
+        <p>Who should attend: First-year and second-year law students. Third-year students seeking a refresher are also welcome.</p>
+        <p>Registration details will be announced closer to the date.</p>
+        <a href="#" class="btn" onclick="showPage('events')">Back to Events</a>
+    </section>
+</div>
+
+<!-- ANNUAL GALA PAGE -->
+<div id="metGala" class="page">
+    <section>
+        <img src="metgala.jpg" alt="USPLSA Annual Gala" style="width:100%; max-height:360px; object-fit:cover; border-radius: 14px; margin-bottom: 1.5rem;">
+        <h2>USPLSA Annual Gala</h2>
+        <p>The USPLSA Annual Gala is the signature social event of the year and our final event to conclude the year in style. It is an evening of celebration, elegance, and community – a chance for law students, faculty, and alumni to come together, socialize, and unwind after a busy academic year.</p>
+        <h3>What to expect:</h3>
+        <ul>
+            <li>Red carpet arrivals and photo opportunities</li>
+            <li>Music, dancing, and entertainment</li>
+            <li>Awards and recognition for outstanding students and contributors</li>
+            <li>Dinner and refreshments</li>
+            <li>A night of celebration with the USP law community</li>
+        </ul>
+        <h3>Why attend?</h3>
+        <ul>
+            <li>Celebrate the end of the academic year</li>
+            <li>Socialize with fellow law students outside the classroom</li>
+            <li>Create lasting memories with your cohort</li>
+            <li>Dress up and have fun – you've earned it</li>
+        </ul>
+        <p>Date: TBC (late Semester 2) | Time: TBC (evening event) | Venue: TBC</p>
+        <p>Tickets and further details will be announced closer to the date. This is our final event of the year – do not miss it.</p>
+        <a href="#" class="btn" onclick="showPage('events')">Back to Events</a>
+    </section>
+</div>
+
+<!-- EXECUTIVES PAGE -->
+<div id="executives" class="page">
+    <section>
+        <h2>USPLSA Executive Team</h2>
+        <p style="margin-bottom: 2rem; font-size: 1.1rem;">
+            Meet the dedicated students leading the USP Law Students Association.
+        </p>
+        <div class="executives-grid">
+            <div class="executive-card">
+                <img src="adi.jpg" alt="Adi Sala Korosaya">
+                <h3>Adi Sala Korosaya</h3>
+                <p class="role">President</p>
+                <p class="bio">Final Year Law Student</p>
+                <p class="email"><a href="mailto:S11202650@student.usp.ac.fj">S11202650@student.usp.ac.fj</a></p>
+            </div>
+            <div class="executive-card">
+                <img src="samuela.jpg" alt="Samuela Tuinabua">
+                <h3>Samuela Tuinabua</h3>
+                <p class="role">Vice President</p>
+                <p class="bio">Final Year Law Student</p>
+                <p class="email"><a href="mailto:S11213721@student.usp.ac.fj">S11213721@student.usp.ac.fj</a></p>
+            </div>
+            <div class="executive-card">
+                <img src="catherine.jpg" alt="Catherine Mahima Singh">
+                <h3>Catherine Mahima Singh</h3>
+                <p class="role">Vice President</p>
+                <p class="bio">Final Year Law Student</p>
+                <p class="email"><a href="mailto:S11209731@student.usp.ac.fj">S11209731@student.usp.ac.fj</a></p>
+            </div>
+            <div class="executive-card">
+                <img src="mela.jpg" alt="Mela Domolailai">
+                <h3>Mela Domolailai</h3>
+                <p class="role">Secretary</p>
+                <p class="bio">2nd Year Law Student</p>
+                <p class="email"><a href="mailto:S11240477@student.usp.ac.fj">S11240477@student.usp.ac.fj</a></p>
+            </div>
+            <div class="executive-card">
+                <img src="nahush.jpg" alt="Nahush Nand">
+                <h3>Nahush Nand</h3>
+                <p class="role">Treasurer</p>
+                <p class="bio">3rd Year Law Student</p>
+                <p class="email"><a href="mailto:S11229855@student.usp.ac.fj">S11229855@student.usp.ac.fj</a></p>
+            </div>
+            <div class="executive-card">
+                <img src="keilani.jpg" alt="Keilani Peaua">
+                <h3>Keilani Peaua</h3>
+                <p class="role">Assistant Secretary</p>
+                <p class="bio">2nd Year Law Student</p>
+                <p class="email"><a href="mailto:S11240946@student.usp.ac.fj">S11240946@student.usp.ac.fj</a></p>
+            </div>
+            <div class="executive-card">
+                <img src="https://i.ibb.co/LdZ8HyYp/logo.png" alt="Akenesi Fa’otusia">
+                <h3>Akenesi Fa’otusia</h3>
+                <p class="role">Assistant Treasurer</p>
+                <p class="bio">3rd Year Law Student</p>
+                <p class="email"><a href="mailto:S11165366@student.usp.ac.fj">S11165366@student.usp.ac.fj</a></p>
+            </div>
+            <div class="executive-card">
+                <img src="shruti.jpg" alt="Shruti Chand">
+                <h3>Shruti Chand</h3>
+                <p class="role">Education Chair</p>
+                <p class="bio">2nd Year Law Student</p>
+                <p class="email"><a href="mailto:S11229519@student.usp.ac.fj">S11229519@student.usp.ac.fj</a></p>
+            </div>
+            <div class="executive-card">
+                <img src="vatemosi.jpg" alt="Vatemosi Turaga">
+                <h3>Vatemosi Turaga</h3>
+                <p class="role">Social & Welfare Chair</p>
+                <p class="bio">2nd Year Law Student</p>
+                <p class="email"><a href="mailto:S11241109@student.usp.ac.fj">S11241109@student.usp.ac.fj</a></p>
+            </div>
+            <div class="executive-card">
+                <img src="https://i.ibb.co/LdZ8HyYp/logo.png" alt="Lepani Cavuilati">
+                <h3>Lepani Cavuilati</h3>
+                <p class="role">Public Relations Chair</p>
+                <p class="bio">3rd Year Law Student</p>
+                <p class="email"><a href="mailto:S11232584@student.usp.ac.fj">S11232584@student.usp.ac.fj</a></p>
+            </div>
+            <div class="executive-card">
+                <img src="lucia.jpg" alt="Lucia Singh">
+                <h3>Lucia Singh</h3>
+                <p class="role">Sports & Recreation Chair</p>
+                <p class="bio">Final Year Law Student</p>
+                <p class="email"><a href="mailto:S11208292@student.usp.ac.fj">S11208292@student.usp.ac.fj</a></p>
+            </div>
+            <div class="executive-card">
+                <img src="https://i.ibb.co/LdZ8HyYp/logo.png" alt="Maika Cabenasiga">
+                <h3>Maika Cabenasiga</h3>
+                <p class="role">Cultural & Religious Chair</p>
+                <p class="bio">2nd Year Law Student</p>
+                <p class="email"><a href="mailto:S11243699@student.usp.ac.fj">S11243699@student.usp.ac.fj</a></p>
+            </div>
+            <div class="executive-card">
+                <img src="filimone.jpg" alt="Filimone Suwai">
+                <h3>Filimone Suwai</h3>
+                <p class="role">Executive Member</p>
+                <p class="bio">1st Year Law Student</p>
+                <p class="email"><a href="mailto:S11251180@student.usp.ac.fj">S11251180@student.usp.ac.fj</a></p>
+            </div>
+            <div class="executive-card">
+                <img src="https://i.ibb.co/LdZ8HyYp/logo.png" alt="Annie May Tawake">
+                <h3>Annie May Tawake</h3>
+                <p class="role">Executive Member</p>
+                <p class="bio">1st Year Law Student</p>
+                <p class="email"><a href="mailto:S11254688@student.usp.ac.fj">S11254688@student.usp.ac.fj</a></p>
+            </div>
+            <div class="executive-card">
+                <img src="neel.jpg" alt="Neel Patel">
+                <h3>Neel Patel</h3>
+                <p class="role">Executive Member</p>
+                <p class="bio">1st Year Law Student</p>
+                <p class="email"><a href="mailto:S11201045@student.usp.ac.fj">S11201045@student.usp.ac.fj</a></p>
+            </div>
+            <div class="executive-card">
+                <img src="danya.jpg" alt="Danya Prasad">
+                <h3>Danya Prasad</h3>
+                <p class="role">Executive Member</p>
+                <p class="bio">2nd Year Law Student</p>
+                <p class="email"><a href="mailto:S11235240@student.usp.ac.fj">S11235240@student.usp.ac.fj</a></p>
+            </div>
+            <div class="executive-card">
+                <img src="gloria.jpg" alt="Gloria Serevi">
+                <h3>Gloria Serevi</h3>
+                <p class="role">Executive Member</p>
+                <p class="bio">Final Year Law Student</p>
+                <p class="email"><a href="mailto:S11214477@student.usp.ac.fj">S11214477@student.usp.ac.fj</a></p>
+            </div>
+            <div class="executive-card">
+                <img src="amelia.jpg" alt="Amelia Waqairamasi">
+                <h3>Amelia Waqairamasi</h3>
+                <p class="role">Executive Member</p>
+                <p class="bio">Third Year Law Student</p>
+                <p class="email"><a href="mailto:S11223371@student.usp.ac.fj">S11223371@student.usp.ac.fj</a></p>
+            </div>
+            <div class="executive-card">
+                <img src="shreeya.jpg" alt="Shreeya Kumar">
+                <h3>Shreeya Kumar</h3>
+                <p class="role">Executive Member</p>
+                <p class="bio">Final Year Law Student</p>
+                <p class="email"><a href="mailto:S11219125@student.usp.ac.fj">S11219125@student.usp.ac.fj</a></p>
+            </div>
+            <div class="executive-card">
+                <img src="https://i.ibb.co/LdZ8HyYp/logo.png" alt="Jone Normani">
+                <h3>Jone Normani</h3>
+                <p class="role">Executive Member</p>
+                <p class="bio">Final Year Law Student</p>
+                <p class="email"><a href="mailto:S11220696@student.usp.ac.fj">S11220696@student.usp.ac.fj</a></p>
+            </div>
+        </div>
+        <p style="text-align: center; margin-top: 2rem;">
+            <em>Interested in joining the executive team? Elections are held in semester 2.</em>
+        </p>
+    </section>
+</div>
+
+<!-- CONSTITUTION PAGE -->
+<div id="constitution" class="page">
+    <section>
+        <div class="constitution-section">
+            <h2>USPLSA Constitution</h2>
+            <p style="font-size: 1.1rem; margin-bottom: 2rem;">
+                The Constitution of the USP Law Students Association outlines our governance structure, 
+                membership rules, executive roles, and operating procedures.
+            </p>
+            <a href="USPLSA - Constitution.pdf" class="btn" download><svg class="icon" aria-hidden="true"><use href="#icon-download"/></svg>Download Constitution (PDF)</a>
+            <p style="margin-top: 1.5rem; opacity: 0.8;">
+                <small>Version 3.2</small>
+            </p>
+        </div>
+        
+        <div style="margin-top: 40px;">
+            <p style="font-size: 1.05rem; color: var(--dark);">
+                The full constitution is available to download above.
+            </p>
+        </div>
+    </section>
+</div>
+
+<!-- MERCH PAGE -->
+<div id="merch" class="page">
+    <section>
+        <h2>Association Merchandise</h2>
+        <p style="margin-bottom: 2rem; font-size: 1.1rem;">
+            Show your USPLSA pride! All proceeds support association activities and student initiatives.
+        </p>
+        <div class="merch-grid">
+            <div class="merch-item">
+                <img src="tshirt.jpg" alt="LSA Shirts">
+                <div class="merch-info">
+                    <h3>LSA Shirts</h3>
+                    <p>Choose from two shirt styles: Polo Shirt or Round-neck T-Shirt. Available in sizes S-XXL.</p>
+                    <p class="price">Polo Shirt – FJD $45</p>
+                    <p class="price">Round-neck T-Shirt – FJD $42</p>
+                    <a href="https://forms.gle/nS8roYTLVZxAQCfW6" class="btn" target="_blank" rel="noopener noreferrer">Order Now</a>
+                </div>
+            </div>
+            <div class="merch-item">
+                <img src="mug.jpg" alt="LSA Coffee Mug">
+                <div class="merch-info">
+                    <h3>LSA Coffee Mug</h3>
+                    <p>Coming soon.</p>
+                    <p class="price">Coming Soon</p>
+                </div>
+            </div>
+            <div class="merch-item">
+                <img src="tote.jpg" alt="LSA Tote Bag">
+                <div class="merch-info">
+                    <h3>LSA Tote Bag</h3>
+                    <p>LSA tote bag with printed logo, perfect for books and groceries.</p>
+                    <p class="price">FJD $15</p>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfIUl7d3R7e2-9VsP41Q8ZXtdYCydfyARa8-JkoIRAIbo94yA/viewform?usp=header" class="btn" target="_blank" rel="noopener noreferrer">Order Now</a>
+                </div>
+            </div>
+        </div>
+            <p style="text-align: center; margin-top: 2rem;">
+            <em><svg class="icon" aria-hidden="true"><use href="#icon-mail"/></svg> Orders are made by tapping the “Order Now” button for each item. If you have questions, you may also email us at <strong>usplsaexecutives@gmail.com</strong>.</em>
+        </p>
+    </section>
+</div>
+</main>
+
+<button class="chat-toggle" id="chatToggle" type="button" aria-label="Open chat assistant"><svg class="icon" aria-hidden="true"><use href="#icon-message"/></svg>Ask USPLSA</button>
+<aside class="chat-widget" id="chatWidget" aria-label="USPLSA Assistant" aria-hidden="true">
+    <div class="chat-header">
+        <div class="chat-header-row">
+            <div>
+                <strong>USPLSA Assistant</strong>
+                <small>Quick answers and shortcuts for students.</small>
+            </div>
+            <button class="chat-close" id="chatClose" type="button" aria-label="Close chat">×</button>
+        </div>
+    </div>
+    <div class="chat-messages" id="chatMessages" role="log" aria-live="polite" aria-relevant="additions"></div>
+    <div class="chat-suggestions" id="chatSuggestions" aria-label="Suggested questions">
+        <button class="chat-suggestion" type="button" data-question="What events are coming up?">Upcoming events</button>
+        <button class="chat-suggestion" type="button" data-question="How do I order merch?">Order merch</button>
+        <button class="chat-suggestion" type="button" data-question="How can I contact the executive team?">Contact executives</button>
+        <button class="chat-suggestion" type="button" data-question="How do I join USPLSA?">Get involved</button>
+        <button class="chat-suggestion" type="button" data-question="How do I enrol in law at USP?">Enrol in law</button>
+        <button class="chat-suggestion" type="button" data-question="What law programmes and combinations are available?">Law programmes</button>
+    </div>
+    <form class="chat-form" id="chatForm">
+        <input id="chatInput" type="text" placeholder="Ask a question..." autocomplete="off" aria-label="Your question" />
+        <button type="submit">Send</button>
+    </form>
+</aside>
+
+<footer>
+    <div class="footer-content">
+        <div class="footer-section">
+            <h3>USP Law Students Association</h3>
+            <p>Empowering tomorrow's legal minds through community, academic support, and leadership.</p>
+        </div>
+        <div class="footer-section">
+            <h3>Quick Links</h3>
+            <p><a href="#home" onclick="showPage('home', event)" style="color: #fff;">Home</a></p>
+            <p><a href="#events" onclick="showPage('events', event)" style="color: #fff;">Events</a></p>
+            <p><a href="#merch" onclick="showPage('merch', event)" style="color: #fff;">Merchandise</a></p>
+        </div>
+        <div class="footer-section">
+            <h3>Contact Us</h3>
+            <p class="contact-item"><svg class="icon" aria-hidden="true"><use href="#icon-pin"/></svg>USP Laucala Campus, Suva, Fiji</p>
+            <p class="contact-item"><svg class="icon" aria-hidden="true"><use href="#icon-mail"/></svg>usplsaexecutives@gmail.com</p>
+            <p class="contact-item"><svg class="icon" aria-hidden="true"><use href="#icon-phone"/></svg>Follow us on social media</p>
+            <div class="social-links">
+                <a href="https://www.facebook.com/share/1EbkZmQKBG/?mibextid=wwXIfr" class="social-link" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 5 3.66 9.14 8.44 9.88v-6.99H7.9v-2.9h2.54V9.79c0-2.51 1.49-3.89 3.77-3.89 1.09 0 2.23.2 2.23.2v2.45h-1.25c-1.23 0-1.61.76-1.61 1.54v1.84h2.74l-.44 2.9h-2.3V22C18.34 21.14 22 17 22 12z"/>
+                    </svg>
+                </a>
+                <a href="https://instagram.com/usp_lawstudents_laucala" class="social-link" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M12 2.16c3.2 0 3.584.012 4.85.07 1.17.056 1.97.24 2.43.4a4.92 4.92 0 0 1 1.77 1.02 4.92 4.92 0 0 1 1.02 1.77c.16.46.34 1.26.4 2.43.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.06 1.17-.24 1.97-.4 2.43a4.92 4.92 0 0 1-1.02 1.77 4.92 4.92 0 0 1-1.77 1.02c-.46.16-1.26.34-2.43.4-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.06-1.97-.24-2.43-.4a4.92 4.92 0 0 1-1.77-1.02 4.92 4.92 0 0 1-1.02-1.77c-.16-.46-.34-1.26-.4-2.43C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.06-1.17.24-1.97.4-2.43a4.92 4.92 0 0 1 1.02-1.77 4.92 4.92 0 0 1 1.77-1.02c.46-.16 1.26-.34 2.43-.4C8.42 2.17 8.8 2.16 12 2.16zm0 1.74c-3.16 0-3.53.01-4.77.07-1.04.05-1.6.23-1.98.38a3.17 3.17 0 0 0-1.15.73 3.17 3.17 0 0 0-.73 1.15c-.15.38-.33.94-.38 1.98-.06 1.24-.07 1.61-.07 4.77s.01 3.53.07 4.77c.05 1.04.23 1.6.38 1.98.18.47.43.88.73 1.15.27.3.68.55 1.15.73.38.15.94.33 1.98.38 1.24.06 1.61.07 4.77.07s3.53-.01 4.77-.07c1.04-.05 1.6-.23 1.98-.38a3.17 3.17 0 0 0 1.15-.73 3.17 3.17 0 0 0 .73-1.15c.15-.38.33-.94.38-1.98.06-1.24.07-1.61.07-4.77s-.01-3.53-.07-4.77c-.05-1.04-.23-1.6-.38-1.98a3.17 3.17 0 0 0-.73-1.15 3.17 3.17 0 0 0-1.15-.73c-.38-.15-.94-.33-1.98-.38-1.24-.06-1.61-.07-4.77-.07zm0 3.25a4.59 4.59 0 1 1 0 9.18 4.59 4.59 0 0 1 0-9.18zm0 1.74a2.85 2.85 0 1 0 0 5.7 2.85 2.85 0 0 0 0-5.7zm4.93-1.8a1.07 1.07 0 1 1 0 2.14 1.07 1.07 0 0 1 0-2.14z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>© 2026 USP Law Students Association. All Rights Reserved.</p>
+    </div>
+</footer>
+
+<script>
+    const hero = document.querySelector('.hero');
+    const heroIntroVideo = document.getElementById('heroIntroVideo');
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+    function finishHeroIntro() {
+        if (!hero || hero.classList.contains('hero--intro-complete')) return;
+        hero.classList.add('hero--intro-complete');
+        if (heroIntroVideo) heroIntroVideo.pause();
+    }
+
+    if (prefersReducedMotion.matches) {
+        finishHeroIntro();
+    } else {
+        window.setTimeout(finishHeroIntro, 10000);
+    }
+
+    const pageTitles = {
+        home: 'USPLSA | USP Law Students Association',
+        about: 'About USPLSA | USP Law Students Association',
+        events: 'Events | USPLSA',
+        executives: 'Executive Team | USPLSA',
+        constitution: 'Constitution | USPLSA',
+        merch: 'Merchandise | USPLSA'
+    };
+
+    function showPage(pageId, event, updateHistory = true) {
+        if (event) {
+            event.preventDefault();
+        }
+
+        // Hide all pages
+        const pages = document.querySelectorAll('.page');
+        pages.forEach(page => {
+            page.classList.remove('active');
+        });
+        
+        // Show selected page
+        const selectedPage = document.getElementById(pageId);
+        if (selectedPage) {
+            selectedPage.classList.add('active');
+            document.title = pageTitles[pageId] || 'USPLSA | USP Law Students Association';
+            document.querySelectorAll('nav a[href^="#"]').forEach(link => {
+                const isCurrent = link.getAttribute('href') === '#' + pageId;
+                link.toggleAttribute('aria-current', isCurrent);
+            });
+            if (updateHistory && window.history && window.history.pushState) {
+                window.history.pushState({ page: pageId }, '', '#' + pageId);
+            }
+            window.scrollTo({ top: 0, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+            document.getElementById('main-content').focus({ preventScroll: true });
+        }
+    }
+
+    function loadPageFromHash() {
+        const hash = window.location.hash.replace('#', '');
+        const validPage = hash && document.getElementById(hash);
+        if (validPage) {
+            showPage(hash, null, false);
+        } else {
+            showPage('home', null, false);
+        }
+    }
+
+    window.addEventListener('hashchange', loadPageFromHash);
+
+    const announcementToggle = document.getElementById('announcementToggle');
+    const announcementsPanel = document.getElementById('announcementsPanel');
+    const announcementWrapper = document.querySelector('.announcement-wrapper');
+    const viewAnnouncements = document.getElementById('viewAnnouncements');
+
+    function closeAnnouncements() {
+        announcementsPanel.classList.remove('open');
+        announcementsPanel.setAttribute('aria-hidden', 'true');
+        announcementToggle.setAttribute('aria-expanded', 'false');
+        announcementToggle.setAttribute('aria-label', 'Open announcements');
+    }
+
+    announcementToggle.addEventListener('click', () => {
+        const isOpen = announcementsPanel.classList.toggle('open');
+        announcementsPanel.setAttribute('aria-hidden', String(!isOpen));
+        announcementToggle.setAttribute('aria-expanded', String(isOpen));
+        announcementToggle.setAttribute('aria-label', isOpen ? 'Close announcements' : 'Open announcements');
+    });
+
+    viewAnnouncements.addEventListener('click', () => {
+        closeAnnouncements();
+        showPage('events');
+    });
+
+    document.addEventListener('click', event => {
+        if (!announcementWrapper.contains(event.target)) closeAnnouncements();
+    });
+
+    document.addEventListener('keydown', event => {
+        if (event.key === 'Escape' && announcementsPanel.classList.contains('open')) {
+            closeAnnouncements();
+            announcementToggle.focus();
+        }
+    });
+
+    function updateCountdown() {
+        const targetDate = new Date('2026-07-27T00:00:00+12:00');
+        const now = new Date();
+        const difference = targetDate - now;
+
+        const dayEls = [];
+        const hourEls = [];
+        const minuteEls = [];
+        const secondEls = [];
+
+        if (difference <= 0) {
+            [dayEls, hourEls, minuteEls, secondEls].flat().forEach(el => {
+                if (el) el.textContent = '00';
+            });
+            return;
+        }
+
+        const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((difference / (1000 * 60 * 60)) % 24);
+        const minutes = Math.floor((difference / (1000 * 60)) % 60);
+        const seconds = Math.floor((difference / 1000) % 60);
+
+        [dayEls, hourEls, minuteEls, secondEls].forEach((els, index) => {
+            const values = [days, hours, minutes, seconds];
+            els.forEach(el => {
+                if (el) el.textContent = String(values[index]).padStart(2, '0');
+            });
+        });
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+
+    document.querySelectorAll('img').forEach((image, index) => {
+        if (index > 1 && !image.hasAttribute('loading')) image.loading = 'lazy';
+        image.decoding = 'async';
+    });
+
+    const chatToggle = document.getElementById('chatToggle');
+    const chatWidget = document.getElementById('chatWidget');
+    const chatClose = document.getElementById('chatClose');
+    const chatForm = document.getElementById('chatForm');
+    const chatInput = document.getElementById('chatInput');
+    const chatMessages = document.getElementById('chatMessages');
+    const chatSuggestions = document.getElementById('chatSuggestions');
+
+    function addChatMessage(text, sender, action) {
+        const message = document.createElement('div');
+        message.className = `message ${sender}`;
+        message.textContent = text;
+        if (action) {
+            const button = document.createElement('button');
+            button.type = 'button';
+            button.className = 'chat-action';
+            button.textContent = action.label;
+            button.addEventListener('click', action.onClick);
+            message.appendChild(button);
+        }
+        chatMessages.appendChild(message);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+
+    function openPage(page) {
+        showPage(page);
+        closeChat();
+    }
+
+    const uspResources = {
+        enrolment: 'https://enrol.usp.ac.fj/',
+        llb: 'https://www.usp.ac.fj/discipline-of-law/usp-law-programmes/llb/',
+        combined: 'https://www.usp.ac.fj/discipline-of-law/usp-law-programmes/llb-combined-programmes/',
+        solass: 'https://www.usp.ac.fj/usp-solass/'
+    };
+
+    function openExternal(url) {
+        window.open(url, '_blank', 'noopener');
+    }
+
+    function openChat() {
+        chatWidget.classList.add('open');
+        chatWidget.setAttribute('aria-hidden', 'false');
+        chatToggle.setAttribute('aria-label', 'Close chat assistant');
+        chatInput.focus();
+    }
+
+    function closeChat() {
+        chatWidget.classList.remove('open');
+        chatWidget.setAttribute('aria-hidden', 'true');
+        chatToggle.setAttribute('aria-label', 'Open chat assistant');
+        chatToggle.focus();
+    }
+
+    function getReply(message) {
+        const text = message.toLowerCase().replace(/[^a-z0-9\s]/g, ' ');
+        const has = (...terms) => terms.some(term => text.includes(term));
+
+        if (has('hello', 'hi', 'bula', 'hey')) {
+            return { text: 'Bula! I can help you find events, merch, executive contacts, the constitution, and ways to get involved with USPLSA.' };
+        }
+
+        if (has('register', 'registration', 'enrol', 'enroll', 'admission', 'apply', 'application')) {
+            return { text: 'For registration, applications, and enrolment, start with USP’s official eNrolMeUSP portal. It has the current process, deadlines, and application steps. For programme questions, also review the official Law pages.', action: { label: 'Open eNrolMeUSP', onClick: () => openExternal(uspResources.enrolment) } };
+        }
+
+        if (has('unit', 'units', 'course', 'courses', 'subject', 'subjects', 'study plan')) {
+            return { text: 'The official LLB programme page contains the current study plan, units, and course information. Because unit offerings can change, please use that page as the source of truth.', action: { label: 'View LLB units', onClick: () => openExternal(uspResources.llb) } };
+        }
+
+        if (has('combination', 'combinations', 'combined', 'ba llb', 'bcom llb', 'double degree', 'dual degree')) {
+            return { text: 'USP offers combined law programmes. The official Combined Programmes page explains the available combinations, structure, and current requirements.', action: { label: 'View combined programmes', onClick: () => openExternal(uspResources.combined) } };
+        }
+
+        if (has('how long', 'duration', 'length', 'years', 'year')) {
+            return { text: 'The LLB is normally a four-year programme. Combined law programmes normally take five years. Please check the current official programme pages for the exact structure and any changes.', action: { label: 'Check programme details', onClick: () => openExternal(uspResources.llb) } };
+        }
+
+        if (has('requirement', 'requirements', 'entry', 'eligible', 'eligibility')) {
+            return { text: 'Entry requirements vary by programme and can change. Review the official LLB or Combined Programmes page before applying.', action: { label: 'View LLB requirements', onClick: () => openExternal(uspResources.llb) } };
+        }
+
+        if (has('llb', 'law programme', 'law programs', 'programme', 'program', 'solass', 'school of law')) {
+            return { text: 'USP’s Law pages explain the LLB, combined programmes, entry requirements, and study options. The SOLASS site is a useful starting point for broader school information.', action: { label: 'Explore USP SOLASS', onClick: () => openExternal(uspResources.solass) } };
+        }
+
+        if (has('event', 'upcoming', 'moot', 'workshop', 'annual gala', 'irac', 'hague', 'debate')) {
+            return { text: 'You can find current activities, including moots and student events, on the Events page. Check there for dates and details.', action: { label: 'View events', onClick: () => openPage('events') } };
+        }
+
+        if (has('merch', 'shirt', 'tote', 'mug', 'buy', 'order')) {
+            return { text: 'USPLSA merchandise includes shirts and tote bags. The Merch page has prices and Order Now forms for available items.', action: { label: 'Browse merch', onClick: () => openPage('merch') } };
+        }
+
+        if (has('executive', 'contact', 'email', 'president', 'secretary', 'treasurer')) {
+            return { text: 'The Executives page lists the current team and their contact details. For general enquiries, email usplsaexecutives@gmail.com.', action: { label: 'Meet the executives', onClick: () => openPage('executives') } };
+        }
+
+        if (has('join', 'member', 'membership', 'involved', 'volunteer')) {
+            return { text: 'A great way to get involved is to attend USPLSA events and workshops, meet the executive team, and follow our social pages for opportunities. You can also email usplsaexecutives@gmail.com.' };
+        }
+
+        if (has('constitution', 'rules', 'governance')) {
+            return { text: 'The current USPLSA Constitution is available to view and download from the Constitution page.', action: { label: 'View constitution', onClick: () => openPage('constitution') } };
+        }
+
+        return { text: 'I can help with events, merchandise, executive contacts, the constitution, law applications, or getting involved. Try one of the suggested questions below.' };
+    }
+
+    chatToggle.addEventListener('click', () => {
+        chatWidget.classList.contains('open') ? closeChat() : openChat();
+    });
+
+    chatClose.addEventListener('click', closeChat);
+    document.addEventListener('keydown', event => {
+        if (event.key === 'Escape' && chatWidget.classList.contains('open')) closeChat();
+    });
+
+    function answerQuestion(question) {
+        addChatMessage(question, 'user');
+        const reply = getReply(question);
+        window.setTimeout(() => addChatMessage(reply.text, 'bot', reply.action), 250);
+    }
+
+    chatSuggestions.addEventListener('click', event => {
+        const question = event.target.dataset.question;
+        if (question) answerQuestion(question);
+    });
+
+    chatForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+        const text = chatInput.value.trim();
+        if (!text) return;
+
+        chatInput.value = '';
+        answerQuestion(text);
+    });
+
+    addChatMessage('Bula! I can help with USPLSA, law enrolment, programmes, units, and study duration. Ask a question or choose an option below.', 'bot');
+
+    const hagueImages = document.querySelectorAll('#hagueImageFrame img');
+    if (hagueImages.length > 1) {
+        let currentHagueIndex = 0;
+        setInterval(() => {
+            hagueImages[currentHagueIndex].classList.remove('active');
+            currentHagueIndex = (currentHagueIndex + 1) % hagueImages.length;
+            hagueImages[currentHagueIndex].classList.add('active');
+        }, 4000);
+    }
+
+    // Load correct page from URL hash on initial load
+    window.addEventListener('load', loadPageFromHash);
+
+    // Handle browser back/forward buttons
+    window.addEventListener('popstate', function(event) {
+        if (event.state && event.state.page) {
+            showPage(event.state.page, null, false);
+        } else {
+            loadPageFromHash();
+        }
+    });
+</script>
+
+</body>
+</html>
