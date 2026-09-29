@@ -323,7 +323,7 @@
 
         .hero-intro { pointer-events: none; }
         .hero-intro-logo {
-            width: min(190vw, 1000px);
+            width: min(95vw, 720px);
             height: auto;
             max-width: none;
             background: transparent;
@@ -2374,8 +2374,8 @@
             introStarted = true;
             window.clearTimeout(heroIntroTimer);
             hero.classList.add('hero--intro-ready');
-            // Allow 600ms to fade in, then hold fully visible for four seconds.
-            heroIntroTimer = window.setTimeout(finishHeroIntro, 4600);
+            // Allow 600ms to fade in, then hold fully visible for 2.5 seconds.
+            heroIntroTimer = window.setTimeout(finishHeroIntro, 3100);
         }
         if (introLogo.complete) {
             if (introLogo.naturalWidth) startHeroIntro();
