@@ -323,16 +323,19 @@
 
         .hero-intro { pointer-events: none; }
         .hero-intro-logo {
-            width: min(52vw, 320px);
-            max-height: 45vh;
+            width: min(190vw, 1000px);
+            height: auto;
+            max-width: none;
+            background: transparent;
             object-fit: contain;
             filter: drop-shadow(0 12px 32px rgba(0,0,0,.3));
-            animation: heroLogoEntrance 2600ms ease both;
+            animation: heroLogoEntrance 600ms ease both;
+            animation-play-state: paused;
         }
+        .hero--intro-ready .hero-intro-logo { animation-play-state: running; }
         @keyframes heroLogoEntrance {
             0% { opacity: 0; transform: scale(.82) translateY(12px); }
-            35% { opacity: 1; transform: scale(1) translateY(0); }
-            80%, 100% { opacity: 1; transform: scale(1.04); }
+            100% { opacity: 1; transform: scale(1) translateY(0); }
         }
         @media (prefers-reduced-motion: reduce) {
             .hero-intro { display: none; }
@@ -1745,7 +1748,7 @@
 <div id="home" class="page active">
     <div class="hero">
         <div class="hero-intro" aria-hidden="true">
-            <img class="hero-intro-logo" src="transparentlogo.png" alt="">
+            <img class="hero-intro-logo" src="transparentlogo.png?v=2" alt="">
         </div>
         <div class="hero-copy">
             <h1>USPLSA | USP Law Students Association | University of the South Pacific</h1>
@@ -2364,7 +2367,24 @@
 
     if (hero && !prefersReducedMotion.matches) {
         hero.classList.add('hero--intro-pending');
-        heroIntroTimer = window.setTimeout(finishHeroIntro, 2800);
+        const introLogo = hero.querySelector('.hero-intro-logo');
+        let introStarted = false;
+        function startHeroIntro() {
+            if (introStarted || hero.classList.contains('hero--intro-complete')) return;
+            introStarted = true;
+            window.clearTimeout(heroIntroTimer);
+            hero.classList.add('hero--intro-ready');
+            // Allow 600ms to fade in, then hold fully visible for four seconds.
+            heroIntroTimer = window.setTimeout(finishHeroIntro, 4600);
+        }
+        if (introLogo.complete) {
+            if (introLogo.naturalWidth) startHeroIntro();
+            else finishHeroIntro();
+        } else {
+            introLogo.addEventListener('load', startHeroIntro, { once: true });
+            introLogo.addEventListener('error', finishHeroIntro, { once: true });
+            heroIntroTimer = window.setTimeout(finishHeroIntro, 8000);
+        }
     } else {
         finishHeroIntro();
     }
